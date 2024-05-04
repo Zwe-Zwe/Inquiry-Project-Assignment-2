@@ -7,7 +7,7 @@ $password = "";
 // Create connection
 //The mysqli_connect() function attempts to open a connection to the MySQL Server 
 //running on host which can be either a host name or an IP address. 
-$conn = mysqli_connect($servername, $username, $password);
+$conn = mysqli_connect($servername, $username, $password,"",3307);
 
 // Check connection
 if (!$conn) {
@@ -17,9 +17,7 @@ if (!$conn) {
 // Create database
 //mysqli_query() function performs a query against a database.
 $sql = "CREATE DATABASE IF NOT EXISTS MSL";
-if (mysqli_query($conn, $sql)) {
-    echo "Database created successfully";
-} else {
+if (!mysqli_query($conn, $sql)) {
     echo "Error creating database: " . mysqli_error($conn);
 }
 
