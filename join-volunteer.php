@@ -43,9 +43,6 @@
                 name="first-name"
                 type="text"
                 placeholder="Enter your first name"
-                maxlength="25"
-                pattern="[A-Za-z]+"
-                
               />
             </div>
             <div class="input-box">
@@ -55,9 +52,6 @@
                 name="last-name"
                 type="text"
                 placeholder="Enter your last name"
-                maxlength="25"
-                pattern="[A-Za-z]+"
-                
               />
             </div>
             <div class="input-box">
@@ -67,8 +61,6 @@
                 name="email"
                 type="email"
                 placeholder="name@gmail.com"
-                pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}"
-                
               />
             </div>
 
@@ -81,8 +73,6 @@
                   name="address"
                   type="text"
                   placeholder="Enter your street"
-                  maxlength="40"
-                  
                 />
               </div>
               <div class="input-box">
@@ -92,8 +82,6 @@
                   name="city-town"
                   type="text"
                   placeholder="Enter your city / town"
-                  maxlength="20"
-                  
                 />
               </div>
               <div class="input-box">

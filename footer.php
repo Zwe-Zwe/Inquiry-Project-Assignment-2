@@ -12,19 +12,19 @@
           <div class="footer-col">
             <h4>organization</h4>
             <ul>
-              <li><a href="activities.html">activities</a></li>
-              <li><a href="enquiry-service.html">enquiry</a></li>
-              <li><a href="join-volunteer.html">join us</a></li>
+              <li><a href="activities.php">activities</a></li>
+              <li><a href="enquiry-service.php">enquiry</a></li>
+              <li><a href="join-volunteer.php">join us</a></li>
             </ul>
           </div>
           <div class="footer-col">
             <h4>profiles</h4>
             <ul>
-              <li><a href="daniel.html">Daniel Sie</a></li>
-              <li><a href="michael.html">Michael Wong</a></li>
-              <li><a href="paing.html">Paing Chan</a></li>
-              <li><a href="sherlyn.html">Sherlyn Kok</a></li>
-              <li><a href="zwe.html">Zwe Htet Zaw</a></li>
+              <li><a href="daniel.php">Daniel Sie</a></li>
+              <li><a href="michael.php">Michael Wong</a></li>
+              <li><a href="paing.php">Paing Chan</a></li>
+              <li><a href="sherlyn.php">Sherlyn Kok</a></li>
+              <li><a href="zwe.php">Zwe Htet Zaw</a></li>
             </ul>
           </div>
           <div class="footer-col">
@@ -44,10 +44,10 @@
               ></a>
               <br />
             </div>
-            <a class="footer-essentials" href="acknowledgement.html"
+            <a class="footer-essentials" href="acknowledgement.php"
               >Acknowledgements</a
             >
-            <a class="footer-essentials" href="enhancement1.html"
+            <a class="footer-essentials" href="enhancement1.php"
               >Enhancements</a
             >
           </div>
