@@ -6,6 +6,8 @@ $username = "root";
 $password = "";
 
 // Create connection
+//The mysqli_connect() function attempts to open a connection to the MySQL Server 
+//running on host which can be either a host name or an IP address. 
 $conn = mysqli_connect($servername, $username, $password,"",3307); // 3307 is the port number
 
 // Check connection
@@ -46,12 +48,13 @@ $sql = "CREATE TABLE IF NOT EXISTS activities (
     description TEXT NOT NULL,
     photo VARCHAR(255) NOT NULL
 )";
+
 if (!mysqli_query($conn, $sql)) {
     echo "Error creating table: " . mysqli_error($conn);
 } 
 
 // VOLUNTEER INFORMATION TABLE
-$sql = "CREATE TABLE IF NOT EXISTS volunteer_information (
+$sql_volunteer = "CREATE TABLE IF NOT EXISTS volunteer_information (
     id INT AUTO_INCREMENT PRIMARY KEY,
     first_name VARCHAR(255) NOT NULL,
     last_name VARCHAR(255) NOT NULL,
@@ -67,18 +70,35 @@ $sql = "CREATE TABLE IF NOT EXISTS volunteer_information (
     time VARCHAR(255),
     message VARCHAR(255)
 )";
-if (!mysqli_query($conn, $sql)) {
+if (!mysqli_query($conn, $sql_volunteer)) {
     echo "Error creating table: " . mysqli_error($conn);
 }
 
 // USERS TABLE
 $sql = "CREATE TABLE IF NOT EXISTS users (
         id INT AUTO_INCREMENT PRIMARY KEY,
-        name VARCHAR(255) NOT NULL,
         email VARCHAR(255) NOT NULL UNIQUE,
         password VARCHAR(255) NOT NULL
 )";
 if (!mysqli_query($conn, $sql)) {
+    echo "Error creating table: " . mysqli_error($conn);
+}
+
+// ENQUIRY INFORMATION TABLE
+$sql_enquiry = "CREATE TABLE IF NOT EXISTS enquiry_information(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(255) NOT NULL,
+    last_name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    countryCode VARCHAR(255) NOT NULL,
+    phoneNumber VARCHAR(255) NOT NULL UNIQUE,
+    service_type VARCHAR(255) NOT NULL,
+    contact_method VARCHAR(255) NOT NULL,
+    appointment_option VARCHAR(255) NOT NULL,
+    appointment_date VARCHAR(255) NOT NULL,
+    appointment_type VARCHAR(255) NOT NULL
+)";
+if (!mysqli_query($conn, $sql_enquiry)) {
     echo "Error creating table: " . mysqli_error($conn);
 }
 
