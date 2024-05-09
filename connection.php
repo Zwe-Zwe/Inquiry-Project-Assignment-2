@@ -6,8 +6,6 @@ $username = "root";
 $password = "";
 
 // Create connection
-//The mysqli_connect() function attempts to open a connection to the MySQL Server 
-//running on host which can be either a host name or an IP address. 
 $conn = mysqli_connect($servername, $username, $password,"",3307); // 3307 is the port number
 
 // Check connection
@@ -48,13 +46,11 @@ $sql = "CREATE TABLE IF NOT EXISTS activities (
     description TEXT NOT NULL,
     photo VARCHAR(255) NOT NULL
 )";
-
 if (!mysqli_query($conn, $sql)) {
     echo "Error creating table: " . mysqli_error($conn);
 } 
 
 // VOLUNTEER INFORMATION TABLE
-// VARCHAR() is a variable-length string that can contain letters, numbers, and special characters.
 $sql = "CREATE TABLE IF NOT EXISTS volunteer_information (
     id INT AUTO_INCREMENT PRIMARY KEY,
     first_name VARCHAR(255) NOT NULL,
