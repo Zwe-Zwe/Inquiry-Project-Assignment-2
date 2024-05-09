@@ -21,177 +21,194 @@
   }
 
   nav ul {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
   }
 
   nav ul li {
-      display: inline;
-      margin-right: 20px;
+    display: inline;
+    margin-right: 20px;
   }
 
   nav ul li a {
-      color: #fff;
-      text-decoration: none;
+    color: #fff;
+    text-decoration: none;
   }
 
   table {
-      width: 100%;
-      border-collapse: collapse;
+    width: 100%;
+    border-collapse: collapse;
   }
 
-  th, td {
-      border: 1px solid #ddd;
-      padding: 8px;
-      text-align: left;
+  th,
+  td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
   }
 
   th {
-      background-color: #f2f2f2;
-      color: #333;
+    background-color: #f2f2f2;
+    color: #333;
   }
 
   tr:nth-child(even) {
-      background-color: #f2f2f2;
+    background-color: #f2f2f2;
   }
 
   tr:hover {
-      background-color: #ddd;
+    background-color: #ddd;
   }
 
   td a {
-      color: #337ab7;
-      text-decoration: none;
-      margin-right: 5px;
+    text-align: center;
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #4caf50; /* Change to your preferred button color */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  #delete-btn {
+    background-color: red;
   }
 }
 
 #user-edit {
   nav {
-      background-color: #333;
-      color: #fff;
-      padding: 10px;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
   }
 
   nav ul {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
   }
 
   nav ul li {
-      display: inline;
-      margin-right: 20px;
+    display: inline;
+    margin-right: 20px;
   }
 
   nav ul li a {
-      color: #fff;
-      text-decoration: none;
+    color: #fff;
+    text-decoration: none;
   }
-
+  #user-edit-form {
+    margin-top: 40px;
+  }
   form {
-      margin-top: 20px;
-      padding: 20px;
-      border: 1px solid #ddd;
-      width: 50%;
-      margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    width: 50%;
+    margin: 0 auto;
   }
 
   h1 {
-      text-align: center;
+    text-align: center;
   }
 
   label {
-      display: block;
-      margin-bottom: 5px;
+    display: block;
+    margin-bottom: 5px;
   }
 
   input[type="text"] {
-      width: 100%;
-      padding: 8px;
-      margin-bottom: 10px;
-      box-sizing: border-box;
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
   }
 
-  button[type="submit"], a[type="submit"] {
-      background-color: #4CAF50;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      margin-right: 10px;
+  button[type="submit"],
+  a[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 10px;
   }
 
-  button[type="submit"]:hover, a[type="submit"]:hover {
-      background-color: #45a049;
+  button[type="submit"]:hover,
+  a[type="submit"]:hover {
+    background-color: #45a049;
   }
 }
 
 #user-create {
   nav {
-      background-color: #333;
-      color: #fff;
-      padding: 10px;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
   }
 
   nav ul {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
   }
 
   nav ul li {
-      display: inline;
-      margin-right: 20px;
+    display: inline;
+    margin-right: 20px;
   }
 
   nav ul li a {
-      color: #fff;
-      text-decoration: none;
+    color: #fff;
+    text-decoration: none;
+  }
+  #user-create-form {
+    margin-top: 40px;
   }
 
   form {
-      margin-top: 20px;
-      padding: 20px;
-      border: 1px solid #ddd;
-      width: 50%;
-      margin: 0 auto;
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    width: 50%;
+    margin: 0 auto;
   }
 
   h1 {
-      text-align: center;
+    text-align: center;
   }
 
   label {
-      display: block;
-      margin-bottom: 5px;
+    display: block;
+    margin-bottom: 5px;
   }
 
   input[type="text"] {
-      width: 100%;
-      padding: 8px;
-      margin-bottom: 10px;
-      box-sizing: border-box;
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
   }
 
-  button[type="submit"], a[type="submit"] {
-      background-color: #4CAF50;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      margin-right: 10px;
+  button[type="submit"],
+  a[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 10px;
   }
 
-  button[type="submit"]:hover, a[type="submit"]:hover {
-      background-color: #45a049;
+  button[type="submit"]:hover,
+  a[type="submit"]:hover {
+    background-color: #45a049;
   }
 }
 
@@ -227,6 +244,7 @@
 
 .volunteer-process-button:hover {
   background-color: #0056b3; /* Change to a darker shade of your button color on hover */
+  cursor: pointer;
 }
 
 h1 {
