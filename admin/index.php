@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Malaysian Sign Language</title>
+    <title>Admin Panel (Users)</title>
     <meta charset="utf-8" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -35,6 +35,12 @@
                     <li>
                         <a href="createUser.php">Add New</a>
                     </li>
+                    <li>
+                        <a href="../index.php">Logout</a>
+                    </li>
+                    <li>
+                    <a href="?sort=''">Default</a> | <a href="?sort=asc">Sort Ascending</a> | <a href="?sort=desc">Sort Descending</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -50,8 +56,19 @@
             </tr>
             <?php
             include "../connection.php";
-    
-            $sql = "select * from users";
+
+            // Default sorting order
+            $sortOrder = "ASC"; // Default ascending order
+
+            // Check if sorting order is provided in the URL
+            if(isset($_GET['sort']) && ($_GET['sort'] == 'asc' || $_GET['sort'] == 'desc')) {
+                // If sorting order is provided and valid, set $sortOrder
+                $sortOrder = ($_GET['sort'] == 'desc') ? 'DESC' : 'ASC';
+                $sql = "SELECT * FROM users ORDER BY email $sortOrder";
+            } else {
+                // Default query without sorting
+                $sql = "SELECT * FROM users";
+            }
             $result = $conn->query($sql);
             if(!$result){
                 die("Invalid query!");
