@@ -33,8 +33,8 @@
       <form
         id="enquiry_form"
         `1
-        action="mailto:zwehtetzaw777@gmail.com"
-        method="post"
+        action="enquiry_process.php"
+        method="POST"
         enctype="text/plain"
       >
         <h1>Enquiry Service Form</h1>
@@ -66,15 +66,15 @@
               </td>
             </tr>
             <tr>
-              <td><label for="enquiry_email">Email:</label></td>
+              <td><label for="email">Email:</label></td>
               <td>
                 <input
                   type="email"
-                  id="enquiry_email"
+                  id="email"
                   name="email"
                   required
                   placeholder="Enter Your Email Address"
-                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+               
                 />
               </td>
             </tr>
@@ -675,7 +675,6 @@
                   type="tel"
                   id="phoneNumber"
                   name="phoneNumber"
-                  pattern="[0-9]{10}"
                   placeholder="Enter Your Phone Number"
                   required
                 />

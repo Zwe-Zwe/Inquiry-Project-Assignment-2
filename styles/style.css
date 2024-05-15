@@ -13,6 +13,45 @@
   font-family: "Poppins", sans-serif;
 }
 
+.enquiry_process_selection {
+
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: white;
+}
+
+.enquiry_process_selection .form_container {
+
+  text-align: center;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 80%;
+  max-width: 600px;
+}
+
+.enquiry_process_button{
+
+  text-align: center;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff; /* Change to your preferred button color */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+
+}
+
+.enquiry_process_button:hover{
+  background-color: #0056b3; /* Change to a darker shade of your button color on hover */
+  cursor: pointer;
+}
+
 .volunteer-process-section {
   margin-top: auto;
   display: flex;
