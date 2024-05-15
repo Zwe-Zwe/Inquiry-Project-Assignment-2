@@ -13,7 +13,7 @@
   font-family: "Poppins", sans-serif;
 }
 
-.enquiry_process_selection {
+.enquiry_process_section {
 
   margin-top: auto;
   display: flex;
@@ -23,7 +23,7 @@
   background-color: white;
 }
 
-.enquiry_process_selection .form_container {
+.enquiry_process_section .form_container {
 
   text-align: center;
   background-color: #fff;

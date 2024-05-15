@@ -32,9 +32,8 @@
     <article id="enquiry-article">
       <form
         id="enquiry_form"
-        `1
         action="enquiry_process.php"
-        method="POST"
+        method="post"
         enctype="text/plain"
       >
         <h1>Enquiry Service Form</h1>
@@ -48,7 +47,7 @@
                   name="first_name"
                   id="first_name"
                   type="text"
-                  required="required"
+                  
                   placeholder="First Name"
                 />
               </td>
@@ -60,7 +59,7 @@
                   name="last_name"
                   id="last_name"
                   type="text"
-                  required="required"
+                  
                   placeholder="last Name"
                 />
               </td>
@@ -72,7 +71,7 @@
                   type="email"
                   id="email"
                   name="email"
-                  required
+                  
                   placeholder="Enter Your Email Address"
                
                 />
@@ -81,7 +80,7 @@
             <tr>
               <td><label for="countryCode">Country Code:</label></td>
               <td>
-                <select id="countryCode" name="countryCode" required>
+                <select id="countryCode" name="countryCode" >
                   <option value="" disabled selected>Select a country</option>
                   <option data-countryCode="DZ" value="213">
                     Algeria (+213)
@@ -676,14 +675,14 @@
                   id="phoneNumber"
                   name="phoneNumber"
                   placeholder="Enter Your Phone Number"
-                  required
+                 
                 />
               </td>
             </tr>
             <tr>
               <td><label for="service">Choose Service:</label></td>
               <td>
-                <select id="service" name="service" required>
+                <select id="service" name="service" >
                   <option value="" disabled selected>Select a Service</option>
                   <option value="bim_class">BIM Class</option>
                   <option value="car_wash">Charity Car Wash</option>
@@ -761,7 +760,7 @@
                   type="date"
                   id="appointmentDate"
                   name="appointmentDate"
-                  required
+                  
                 />
               </td>
             </tr>
@@ -772,7 +771,7 @@
                   type="time"
                   id="appointmentTime"
                   name="appointmentTime"
-                  required
+                  
                 />
               </td>
             </tr>
