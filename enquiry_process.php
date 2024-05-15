@@ -32,13 +32,13 @@
                     $phNum = $_POST['phoneNumber'];
                     
                     $email_exist = mysqli_query($conn, "SELECT email FROM enquiry_information WHERE email = '$email'");
-                    $phNum_exist = mysqli_query($conn, "SELECT phone_num FROM enquiry_information WHERE phone_num = '$phNum'");
+                    $phNum_exist = mysqli_query($conn, "SELECT phoneNumber FROM enquiry_information WHERE phoneNumber = '$phNum'"); // Changed to phone_number
                     
                     if (mysqli_num_rows($email_exist) > 0) $errors['email'] = "EMAIL ALREADY EXISTS.";
                     if (mysqli_num_rows($phNum_exist) > 0) $errors['phNum'] = "PHONE NUMBER ALREADY EXISTS.";
 
                     if (empty($errors)) {
-                        $stmt = $conn->prepare("INSERT INTO enquiry_information (first_name, last_name, email, country_code, phone_num, service_type, contact_method, appointment, date, time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                        $stmt = $conn->prepare("INSERT INTO enquiry_information (first_name, last_name, email, countryCode, phoneNumber, service_type, contact_method, appointment_option, appointment_date, appointment_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
                         $stmt->bind_param("ssssssssss", $_POST['first_name'], $_POST['last_name'], $email, $_POST['countryCode'], $phNum, $_POST['service'], $_POST['contact_method'], $_POST['appointment_option'], $_POST['appointmentDate'], $_POST['appointmentTime']);
 
                         if ($stmt->execute()) {
@@ -78,19 +78,21 @@
                     if (empty($date)) $errors['appointmentDate'] = "Date is required.";
                     if (empty($time)) $errors['appointmentTime'] = "Time is required.";
 
-                    if (!preg_match('/^\+[0-9]{12}$/', $phNum)) $errors['phoneNumber'] = "Invalid phone number. Please enter 12 digits including country code.";
+                    if (!preg_match('/^\d{4,15}$/', $phNum)) $errors['phoneNumber'] = "Invalid phone number. Please enter exactly 10 digits.";
 
                     if (empty($errors)) {
                         echo "<h3> Please confirm your details!</h3>";
-                        echo "<p> Name: " . htmlspecialchars($firstName) . " " . htmlspecialchars($lastName) . "</p>";
-                        echo "<p> Email: " . htmlspecialchars($email) . "</p>";
-                        echo "<p> Country Code: " . htmlspecialchars($countryCode) . "</p>";
-                        echo "<p> Phone Number: " . htmlspecialchars($phNum) . "</p>";
-                        echo "<p> Service: " . htmlspecialchars($service) . "</p>";
-                        echo "<p> Contact Method: " . htmlspecialchars($contactMethod) . "</p>";
-                        echo "<p> Appointment Type: " . htmlspecialchars($appointment) . "</p>";
-                        echo "<p> Date: " . htmlspecialchars($date) . "</p>";
-                        echo "<p> Time: " . htmlspecialchars($time) . "</p>";
+                        echo "<table class='enquiry_process_table'>";
+                        echo "<tr><td>Name:</td><td>" . htmlspecialchars($firstName) . " " . htmlspecialchars($lastName) . "</td></tr>";
+                        echo "<tr><td>Email:</td><td>" . htmlspecialchars($email) . "</td></tr>";
+                        echo "<tr><td>Country Code:</td><td>" . htmlspecialchars($countryCode) . "</td></tr>";
+                        echo "<tr><td>Phone Number:</td><td>" . htmlspecialchars($phNum) . "</td></tr>";
+                        echo "<tr><td>Service:</td><td>" . htmlspecialchars($service) . "</td></tr>";
+                        echo "<tr><td>Contact Method:</td><td>" . htmlspecialchars($contactMethod) . "</td></tr>";
+                        echo "<tr><td>Appointment Type:</td><td>" . htmlspecialchars($appointment) . "</td></tr>";
+                        echo "<tr><td>Date:</td><td>" . htmlspecialchars($date) . "</td></tr>";
+                        echo "<tr><td>Time:</td><td>" . htmlspecialchars($time) . "</td></tr>";
+                        echo "</table>";
 
                         echo '<form action="' . htmlspecialchars($_SERVER["PHP_SELF"]) . '" method="post">';
                         foreach ($_POST as $key => $value) {

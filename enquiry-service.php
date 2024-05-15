@@ -34,7 +34,7 @@
         id="enquiry_form"
         action="enquiry_process.php"
         method="post"
-        enctype="text/plain"
+        
       >
         <h1>Enquiry Service Form</h1>
         <fieldset>
@@ -702,7 +702,7 @@
                   <label
                     ><input
                       type="checkbox"
-                      name="contact_method"
+                      name="contact_method[]"
                       value="phone"
                     />
                     Phone Call</label
@@ -710,7 +710,7 @@
                   <label
                     ><input
                       type="checkbox"
-                      name="contact_method"
+                      name="contact_method[]"
                       value="email"
                     />
                     Email</label
@@ -718,7 +718,7 @@
                   <label
                     ><input
                       type="checkbox"
-                      name="contact_method"
+                      name="contact_method[]"
                       value="text"
                     />
                     Text Message</label
