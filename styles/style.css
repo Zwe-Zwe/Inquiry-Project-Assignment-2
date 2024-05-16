@@ -2242,3 +2242,40 @@ footer .container .row {
     background-color: red;
   }
 }
+
+/*Start of View Enquiry CSS*/
+#viewenquiry_title {
+  margin-top: 5em;
+  margin-left: 5em;
+  font-size: 24px;
+  border-left:var(--clr-secondary);
+  border-bottom:var(--clr-secondary);
+  border-radius:2em;
+}
+
+#view_enquiry_table {
+  border: collapse;
+  
+}
+
+.enquiy_table_header {
+  font-size:15px;
+  font-weight:bold;
+  padding:1.5em;
+  text-align:center;
+  background-color:var(--clr-secondary);
+  color: white;
+  border-bottom: 0.3px dashed black;
+}
+
+.enquiry_table_row
+{
+  padding:1.5em;
+  background-color: white;
+  color:black;
+  border-left: 0.3px dashed black;
+  border-right: 0.3px dashed black;
+  font-size:13px;
+  text-align:left;
+
+}
