@@ -101,54 +101,6 @@ $result = $conn->query($sql);
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="../styles/style.css" />
-    <style>
-        .pop-up {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.4);
-            -webkit-backdrop-filter: blur(5px);
-            backdrop-filter: blur(5px);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .pop-up-content {
-            border-radius: 10px;
-            background-color: #fefefe;
-            margin: auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 65%;
-            box-shadow: 0px 0px 10px 0px #000;
-            animation: animateModal 0.4s;
-        }
-
-        @keyframes animateModal {
-            from {opacity: 0;}
-            to {opacity: 1;}
-        }
-
-        .close-btn {
-            color: #aaa;
-            float: right;
-            font-size: 40px;
-            font-weight: bold;
-            text-decoration: none;
-        }
-
-        .close-btn:hover,
-        .close-btn:focus {
-            color: black;
-            cursor: pointer;
-        }
-    </style>
 </head>
 <body>
     <section id="admin-index">
