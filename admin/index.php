@@ -1,4 +1,5 @@
 <?php
+
 include "../connection.php";
 
 $id = "";
@@ -19,6 +20,7 @@ if(isset($_GET['action']) && $_GET['action'] == 'delete' && isset($_GET['id'])){
     exit();
 }
 
+// Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['cancel'])) {
         header("Location: index.php");
@@ -78,11 +80,9 @@ $sortOrder = "ASC"; // Default ascending order
 
 // Check if sorting order is provided in the URL
 if (isset($_GET['sort']) && ($_GET['sort'] == 'asc' || $_GET['sort'] == 'desc')) {
-    // If sorting order is provided and valid, set $sortOrder
     $sortOrder = ($_GET['sort'] == 'desc') ? 'DESC' : 'ASC';
     $sql = "SELECT * FROM users ORDER BY email $sortOrder";
 } else {
-    // Default query without sorting
     $sql = "SELECT * FROM users";
 }
 $result = $conn->query($sql);
@@ -196,7 +196,7 @@ $result = $conn->query($sql);
                         <td>{$row['password']}</td>
                         <td>
                             <a id='edit-button' href='index.php?action=edit&id={$row['id']}'>Edit</a>
-                            <a id='delete-btn' href='deleteUser.php?id={$row['id']}'>Delete</a>
+                            <a id='delete-btn' href='index.php?action=delete&id={$row['id']}'>Delete</a>
                         </td>
                     </tr>
                     ";
@@ -231,7 +231,7 @@ $result = $conn->query($sql);
     <?php if (isset($_GET['action']) && $_GET['action'] == 'add'): ?>
     <div id="user-create" class="pop-up" style="display: flex;">
         <div class="pop-up-content">
-            <span class="close-btn" onclick="window.location.href='index.php'">&times;</span>
+            <a class="close-btn" href="index.php">&times;</a>
             <form method="post">
                 <h1>Create New User</h1>
                 <label> EMAIL: </label>
