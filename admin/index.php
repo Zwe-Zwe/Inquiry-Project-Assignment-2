@@ -2,23 +2,7 @@
 
 include "../connection.php";
 
-$id = "";
-$email = "";
-$password = "";
-
-// Check if delete action is requested
-if(isset($_GET['action']) && $_GET['action'] == 'delete' && isset($_GET['id'])){
-    $id = $_GET['id'];
-    $sql = "DELETE FROM `users` WHERE id=?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("i", $id);
-    $stmt->execute();
-    $stmt->close();
-
-    // Redirect back to index.php after deletion
-    header('Location: index.php');
-    exit();
-}
+$id = $email = $password = $error ="";
 
 // Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -59,20 +43,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-// Check if edit button is clicked
-if (isset($_GET['id']) && isset($_GET['action']) && $_GET['action'] == 'edit') {
-    $id = $_GET['id'];
-    $sql = "SELECT * FROM users WHERE id=?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("i", $id);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $row = $result->fetch_assoc();
-    if ($row) {
-        $email = $row["email"];
-        $password = $row["password"];
+if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['action'])) {
+    if ($_GET['action'] == 'delete' && isset($_GET['id'])) {
+        $id = $_GET['id'];
+        $sql = "DELETE FROM users WHERE id=?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
+        $stmt->close();
+
+        header('Location: index.php');
+        exit();
+    } else if ($_GET['action'] == 'edit' && isset($_GET['id'])) {
+        $id = $_GET['id'];
+        $sql = "SELECT * FROM users WHERE id=?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $row = $result->fetch_assoc();
+        if ($row) {
+            $email = $row["email"];
+            $password = $row["password"];
+        }
+        $stmt->close();
     }
-    $stmt->close();
 }
 
 // Default sorting order
@@ -115,7 +110,7 @@ $result = $conn->query($sql);
                             <a href="index.php?action=add">Add New</a>
                         </li>
                         <li>
-                            <a href="activities-HD/management.php">Activities</a>
+                            <a href="management.php">Activities</a>
                         </li>
                         <li>
                             <a href="../index.php">Logout</a>
@@ -156,45 +151,28 @@ $result = $conn->query($sql);
                 ?>
             </table>
         </div>
+    
+
+        <?php if (isset($_GET['action']) && ($_GET['action'] == 'add' || ($_GET['action'] == 'edit' && isset($_GET['id'])))): ?>
+<div id="user-edit" class="pop-up" style="display: flex;">
+    <div class="pop-up-content">
+        <a class="close-btn" href="index.php">&times;</a>
+        <form method="post">
+            <h1><?php echo $_GET['action'] == 'edit' ? 'Update User' : 'Create New User'; ?></h1>
+            <?php if ($_GET['action'] == 'edit'): ?>
+                <input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>">
+            <?php endif; ?>
+            <label for="email"> EMAIL: </label>
+            <input type="text" name="email" id="email" value="<?php echo htmlspecialchars($email); ?>"> <br>
+            <label for="password"> PASSWORD: </label>
+            <input type="text" name="password" id="password" value="<?php echo htmlspecialchars($password); ?>"> <br>
+            <input type="submit" name="submit" value="<?php echo $_GET['action'] == 'edit' ? 'Update' : 'Create'; ?>">
+            <input type="submit" name="cancel" value="Cancel">
+        </form>
+    </div>
+</div>
+<?php endif; ?>
+
     </section>
-
-    <?php if (isset($_GET['action']) && $_GET['action'] == 'edit' && isset($_GET['id'])): ?>
-    <div id="user-edit" class="pop-up" style="display: flex;">
-        <div class="pop-up-content">
-            <a class="close-btn" href="index.php">&times;</a>
-            <form method="post">
-                <h1>Update User</h1>
-                <input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>"> <br>
-
-                <label for="email"> EMAIL: </label>
-                <input type="text" name="email" id="email" value="<?php echo htmlspecialchars($email); ?>"> <br>
-
-                <label for="password"> PASSWORD: </label>
-                <input type="text" name="password" id="password" value="<?php echo htmlspecialchars($password); ?>"> <br>
-
-                <input type="submit" name="submit" value="Update">
-                <input type="submit" name="cancel" value="Cancel">
-            </form>
-        </div>
-    </div>
-
-    <?php endif; ?>
-
-    <?php if (isset($_GET['action']) && $_GET['action'] == 'add'): ?>
-    <div id="user-create" class="pop-up" style="display: flex;">
-        <div class="pop-up-content">
-            <a class="close-btn" href="index.php">&times;</a>
-            <form method="post">
-                <h1>Create New User</h1>
-                <label> EMAIL: </label>
-                <input type="text" name="email"> <br>
-                <label> PASSWORD: </label>
-                <input type="text" name="password"> <br>
-                <input type="submit" name="submit" value="Create">
-                <input type="submit" name="cancel" value="Cancel">
-            </form>
-        </div>
-    </div>
-    <?php endif; ?>
 </body>
 </html>
