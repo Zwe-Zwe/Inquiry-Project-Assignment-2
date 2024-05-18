@@ -145,19 +145,30 @@ $result = $conn->query($sql);
                             die("Invalid query!");
                         }
                         while ($row = $result->fetch_assoc()) {
+                        
+                            
                             echo "
                             <tr>
                                 <td>{$row['id']}</td>
                                 <td>{$row['userid']}</td>
                                 <td>{$row['password']}</td>
-                                <td>{$row['email']}</td>
-                                <td>
+                                <td>{$row['email']}</td>  <td>  ";
+
+                                if ($row['userid'] != 'admin') {
+                                echo "
+                               
+                                
                                     <a id='edit-button' href='index.php?action=edit&id={$row['id']}'>Edit</a>
-                                    <a id='delete-button' href='index.php?action=delete&id={$row['id']}'>Delete</a>
+                                    <a id='delete-button' href='index.php?action=delete&id={$row['id']}'>Delete</a>";
+                                }
+                                echo"
                                 </td>
                             </tr>
                             ";
-                        }
+                        
+                    }
+                    
+
                         ?>
                     
                         <!-- Add table rows here -->
