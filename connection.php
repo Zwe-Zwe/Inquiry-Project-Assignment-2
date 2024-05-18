@@ -212,7 +212,7 @@ $result = mysqli_query($conn, $sql_check);
 $row = mysqli_fetch_assoc($result);
 $count = $row['count'];
 if ($count == 0) {
-    $sql = "INSERT IGNORE users (email, password) VALUES
+    $sql = "INSERT IGNORE users (userid, password) VALUES
     ('admin', 'admin')";
     if (!mysqli_query($conn, $sql)) {
         echo "Error inserting data: " . mysqli_error($conn);

@@ -2,7 +2,7 @@
 
 include "../connection.php";
 
-$id = $email = $password = $error ="";
+$id = $userid = $email = $password = $error ="";
 
 // Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -11,12 +11,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     } else if (isset($_POST['submit']) && $_POST['submit'] == 'Update') {
         $id = $_POST["id"];
+        $userid = $_POST["userid"];
         $email = $_POST["email"];
         $password = $_POST["password"];
 
-        $sql = "UPDATE users SET email=?, password=? WHERE id=?";
+        $sql = "UPDATE users SET userid=?, email=?, password=? WHERE id=?";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("ssi", $email, $password, $id);
+        $stmt->bind_param("sssi",$userid, $email, $password, $id);
         $stmt->execute();
 
         if ($stmt->affected_rows > 0) {
@@ -27,12 +28,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         $stmt->close();
     } else if (isset($_POST['submit']) && $_POST['submit'] == 'Create') {
+        $userid = $_POST["userid"];
         $email = $_POST["email"];
         $password = $_POST["password"];
 
-        $sql = "INSERT INTO users (email, password) VALUES (?, ?)";
+        $sql = "INSERT INTO users (userid, email, password) VALUES (?, ?, ?)";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("ss", $email, $password);
+        $stmt->bind_param("sss", $userid, $email, $password);
         if ($stmt->execute()) {
             header("Location: index.php");
             exit();
@@ -63,6 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['action'])) {
         $result = $stmt->get_result();
         $row = $result->fetch_assoc();
         if ($row) {
+            $userid = $row["userid"];
             $email = $row["email"];
             $password = $row["password"];
         }
@@ -146,8 +149,9 @@ $result = $conn->query($sql);
                             echo "
                             <tr>
                                 <td>{$row['id']}</td>
-                                <td>{$row['email']}</td>
+                                <td>{$row['userid']}</td>
                                 <td>{$row['password']}</td>
+                                <td>{$row['email']}</td>
                                 <td>
                                     <a id='edit-button' href='index.php?action=edit&id={$row['id']}'>Edit</a>
                                     <a id='delete-button' href='index.php?action=delete&id={$row['id']}'>Delete</a>
@@ -172,6 +176,8 @@ $result = $conn->query($sql);
                             <?php if ($_GET['action'] == 'edit'): ?>
                                 <input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>">
                             <?php endif; ?>
+                            <label for="userid"> USER ID: </label>
+                            <input type="text" name="userid" id="userid" value="<?php echo htmlspecialchars($userid); ?>"> <br>
                             <label for="email"> EMAIL: </label>
                             <input type="text" name="email" id="email" value="<?php echo htmlspecialchars($email); ?>"> <br>
                             <label for="password"> PASSWORD: </label>
