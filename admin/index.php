@@ -177,8 +177,8 @@ $result = $conn->query($sql);
                             <?php endif; ?>
                             <label for="userid"> USER ID: </label>
                             <input type="text" name="userid" id="userid" value="<?php echo htmlspecialchars($userid); ?>"> <br>
-                            <label for="email"> EMAIL: </label>
-                            <input type="text" name="email" id="email" value="<?php echo htmlspecialchars($email); ?>"> <br>
+                            <label for="email1"> EMAIL: </label>
+                            <input type="text" name="email" id="email1" value="<?php echo htmlspecialchars($email); ?>"> <br>
                             <label for="password"> PASSWORD: </label>
                             <input type="text" name="password" id="password" value="<?php echo htmlspecialchars($password); ?>"> <br>
                             <input type="submit" name="submit" value="<?php echo $_GET['action'] == 'edit' ? 'Update' : 'Create'; ?>">

@@ -2503,22 +2503,6 @@ footer .container .row {
     color: red;
   }
 
-  .pagination {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .pagination a {
-    margin: 0 5px;
-    text-decoration: none;
-    color: #333;
-  }
-
-  .pagination span {
-    margin: 0 5px;
-  }
 
   #user-edit {
     position: fixed;
@@ -2538,7 +2522,7 @@ footer .container .row {
     background: white;
     padding: 20px;
     border-radius: 10px;
-    width: 300px;
+    width: 40%;
     position: relative;
   }
 
@@ -2560,16 +2544,18 @@ footer .container .row {
     margin: 10px 0 5px;
   }
 
-  #user-edit input[type="text"],
-  #user-edit input[type="submit"] {
+  #user-edit input[type="text"]
+   {
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
     border: 1px solid #ddd;
   }
 
+
   #user-edit input[type="submit"] {
     cursor: pointer;
+    
   }
 
   #user-edit input[type="submit"]:hover {
