@@ -947,7 +947,7 @@ input[type="radio"]#button-3:checked ~ .arrows#arrow-2 {
   .subnav:hover .submenu {
     display: block;
   }
-  /* Start of css for user_login */
+  /* Start of css for Login & Signup */
   #login_button{
     position: fixed;
     top: 22px;
@@ -1013,7 +1013,22 @@ input[type="radio"]#button-3:checked ~ .arrows#arrow-2 {
   #userid_button:hover{
     text-decoration:underline;
   }
-  /* End of css for user_login */
+  #user_info {
+    margin-top: 1.5em;
+    line-height: 2;
+    margin-bottom: 1.5em;
+  }
+  
+  #problems {
+    margin-left: 2.2em;
+  }
+  
+  @media (max-width: 767px) {
+    .user_container {
+        max-width: 80%;
+    }
+  }
+  /* End of css for Login & Signup */
 }
 /*End of CSS for phone navbar*/
 /*Start of CSS for navbar*/
@@ -1106,7 +1121,7 @@ input[type="radio"]#button-3:checked ~ .arrows#arrow-2 {
       }
     }
   }
-  /* Start of css for user_login */
+  /* Start of css for Login & Signup */
   #login_button{
     position: fixed;
     top: 22px;
@@ -1171,7 +1186,7 @@ input[type="radio"]#button-3:checked ~ .arrows#arrow-2 {
   #userid_button:hover{
     text-decoration:underline;
   }
-  /* End of css for user_login */
+  /* End of css for Login & Signup */
 }
 /*End of CSS for navbar*/
 

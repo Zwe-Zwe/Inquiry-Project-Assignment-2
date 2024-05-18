@@ -89,45 +89,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-        .user-body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 100px;
-            background: var(--clr-primary);
-        }
-
-        .user-container {
-            border: 2px solid var(--clr-accent);
-            margin: 3% 0;
-            padding: 35px 45px;
-            max-width: 700px;
-            background: var(--clr-primary);
-            border-radius: 5px;
-            animation: fadeInUp 1s ease-out;
-            min-width: 500px;
-        }
-
-        .user-container h1 {
-            text-align: center;
-        }
-
-        #user_info {
-            margin-top: 1.5em;
-            line-height: 2;
-        }
-
-        #problems {
-            margin-left: 2.2em;
-        }
-
-        @media (max-width: 767px) {
-            .user_container {
-                max-width: 80%;
-            }
-        }
-    </style>
 </head>
 
 <body>
