@@ -6,7 +6,7 @@ $username = "root";
 $password = "";
 
 // Create connection
-$conn = mysqli_connect($servername, $username, $password,"",3307); // 3307 is the port number
+$conn = mysqli_connect($servername, $username, $password,""); 
 
 // Check connection
 if (!$conn) {
@@ -28,7 +28,7 @@ $password = "";
 $dbname = "MSL"; // database name included this time
 
 // Create connection
-$conn = mysqli_connect($servername, $username, $password,$dbname,3307); // 3307 is the port number
+$conn = mysqli_connect($servername, $username, $password,$dbname);
 // Check connection
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
@@ -40,6 +40,7 @@ if (!$conn) {
 $sql = "CREATE TABLE IF NOT EXISTS activities (
     id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255) NOT NULL UNIQUE,
+    date VARCHAR(255) NOT NULL,
     description TEXT NOT NULL UNIQUE,
     photo TEXT NOT NULL UNIQUE
 )";
@@ -90,8 +91,7 @@ $sql_enquiry = "CREATE TABLE IF NOT EXISTS enquiry_information(
     contact_method VARCHAR(255) NOT NULL,
     appointment_option VARCHAR(255) NOT NULL,
     appointment_date VARCHAR(255) NOT NULL,
-    appointment_time VARCHAR(255) NOT NULL
-    
+    appointment_type VARCHAR(255) NOT NULL
 )";
 if (!mysqli_query($conn, $sql_enquiry)) {
     echo "Error creating table: " . mysqli_error($conn);
@@ -118,9 +118,10 @@ $row = mysqli_fetch_assoc($result);
 $count = $row['count'];
 // If count is 0 (meaning no data exists), then perform the INSERT IGNORE
 if ($count == 0) {
-    $sql = "INSERT IGNORE activities (title, description, photo) VALUES
+    $sql = "INSERT IGNORE activities (title, date, description, photo) VALUES
     (
-        'CHARITY FOOD FAIR 🍲 [07/04/2024]',
+        'CHARITY FOOD FAIR 🍲',
+        '07/04/2024',
         '<p>We welcome you to come and support on 07/04/2024!</p>
         <br />
         <p>Purchasing a book of coupon which is worth RM100, you can buy various items in the fair, while also supporting Sarawak Society of the Deaf(SSD) in gathering the goal of RM300,000. The money will be used for:-</p>
@@ -178,22 +179,25 @@ if ($count == 0) {
             </dd>
         </dl>
         <iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.411045755735!2d110.34421479999999!3d1.5218199!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31fba76940665d95%3A0xd41d7f8c99537582!2sAssociation%20of%20Churches%20in%20Sarawak!5e0!3m2!1sen!2smy!4v1710830899080!5m2!1sen!2smy\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>',
-        'images/charity.jpg'
+        'charity.jpg'
     ),
     (
-        'PINES SQUARE FAIR [26/01/2024 - 07/02/2024]',
+        'PINES SQUARE FAIR',
+        '26/01/2024',
         'Hi everyone! SSD is thrilled to be invited by MTPN to host our Deaf businesses at their Fair. Come check us out at Pines Square (opposite MJC Batu Kawa) - we are open from 7pm every night from 26 January until 7 February (15 days)!',
-        '<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.430580468989!2d110.3089454!3d1.51122!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31fb095d5241459d%3A0x7448a49d54f86631!2sPINES%20SQUARE!5e0!3m2!1sen!2smy!4v1710831506517!5m2!1sen!2smy\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>'
+        'pines-square.webp'
     ),
     (
-        'THANK YOU FOR THE DONATION [13/01/2024]', 
+        'THANK YOU FOR THE DONATION',
+        '15/01/2024', 
         'Representatives from Kuching Buddhist Meditation handed over 30 bags of rice and one big packet of Bee Hoon to Sarawak Society for the Deaf. SSD staff Amy Lau thanked and presented a token of appreciation to them.', 
-        'images/rice.jpg'
+        'rice.jpg'
     ),
     (
-        'UNITY CHARITY AND CULTURE [13/01/2024]',
+        'UNITY CHARITY AND CULTURE',
+        '13/01/2024',
         'Sarawak Society for the Deaf (SSD) is happy and honoured to be invited by MTPN & YMLM Sarawak to attend their UNITY CHARITY AND CULTURE at the Riverine Ballroom by Lok Thian on 13 January 2024.',
-        'images/eating.jpg'
+        'eating.jpg'
     )";
     if (!mysqli_query($conn, $sql)) {
         echo "Error inserting data: " . mysqli_error($conn);
