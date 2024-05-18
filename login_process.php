@@ -35,7 +35,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (password_verify($password, $row['password'])) {
             // Password is correct, start a new session
             $_SESSION['login_user'] = $userid;
-            header("Location: index.php"); // Redirect to welcome page
+            if($userid == "admin"){
+                header("Location: admin/index.php");
+            } else {
+                header("Location: index.php"); // Redirect to welcome page
+            }
             exit();
         } else {
             // Incorrect password
