@@ -137,7 +137,6 @@ $result = $conn->query($sql);
                             <th>Username</th>
                             <th>Password</th>
                             <th>Email</th>
-                            <th>Phone Number</th>
                             <th>Action</th>
                         </tr>
                         
