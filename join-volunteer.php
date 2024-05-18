@@ -26,7 +26,9 @@
   </head>
 
   <body>
-    <?php include 'header.php'?>
+    <header>
+      <?php include "header.php" ?>
+    </header>
 
     <section class="volunteer-body">
       <div class="volunteer-container">

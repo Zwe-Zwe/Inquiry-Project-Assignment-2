@@ -26,8 +26,9 @@
   </head>
 
   <body>
-
-    <?php include 'header.php'?>
+    <header>
+      <?php include "header.php" ?>
+    </header>
     
     <article id="slide_article">
       <section class="slider_container">

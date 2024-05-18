@@ -26,8 +26,9 @@
   </head>
 
   <body>
-    <?php include 'header.php'?>
-    
+    <header>
+      <?php include "header.php" ?>
+    </header>    
     
     <article class="space activities_section">
         <section>

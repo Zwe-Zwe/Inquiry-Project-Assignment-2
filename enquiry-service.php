@@ -29,7 +29,9 @@
   </head>
 
   <body>
-    <?php include 'header.php' ?>
+    <header>
+      <?php include "header.php" ?>
+    </header>
     <article id="enquiry-article">
       <form
         id="enquiry_form"

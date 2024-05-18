@@ -13,7 +13,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <?php include 'header.php'; ?>
+    <header>
+      <?php include "header.php" ?>
+    </header>
     
     <section class="volunteer-process-section">
         <div class="form-container">

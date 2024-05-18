@@ -26,7 +26,9 @@
   </head>
 
   <body>
-    <?php include 'header.php'; ?>
+    <header>
+      <?php include "header.php" ?>
+    </header>
 
     <div class="space">
       <section>

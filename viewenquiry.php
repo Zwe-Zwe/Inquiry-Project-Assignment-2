@@ -16,7 +16,9 @@
 </head>
 
 <body>
-  <?php include "header.php"; ?>
+  <header>
+    <?php include "header.php" ?>
+  </header>
   <?php include "enquiry_formhandler.php"?>
 
   <article id="viewenquiry_content">
