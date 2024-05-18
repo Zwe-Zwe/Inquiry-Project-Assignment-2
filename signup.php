@@ -22,59 +22,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     >
-  <style>
-    .user-body{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 100px;
-      background: var(--clr-primary);
-    }
-    .user-container {
-      border: 2px solid var(--clr-accent);
-      margin: 3% 0;
-      padding: 35px 45px;
-      max-width: 700px;
-      background: var(--clr-primary);
-      border-radius: 5px;
-      animation: fadeInUp 1s ease-out;
-      min-width:500px;
-    }
-    .user-container h1 {
-      text-align: center;
-    }
-    .user-form .button {
-      padding-top:2em;
-    }
-    .user-form .button input {
-      height: 100%;
-      width: 100%;
-      outline: none;
-      color: var(--clr-secondary);
-      border: none;
-      font-size: 14px;
-      border-radius: 5px;
-      letter-spacing: 1px;
-      background: var(--clr-primary);
-      border: 1px solid var(--clr-accent);
-      transition: all 0.3s ease;
-    }
-    .user-form .button input:hover {
-      cursor: pointer;
-      color: var(--clr-primary);
-      background: var(--clr-secondary);
-    }
-    .user_error{
-      background: #F2DEDE;
-      color: #A94442;
-      padding-left:8px;
-      width:90%;
-      margin-bottom:1.1em;
-    }
-    #have_account{
-      font-size:12px;
-    }
-  </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
 
   <body>
@@ -101,7 +49,7 @@
             <p><input type="password" name="password"  id="password"></p>
             <p><label for="confirmpassword">Confirm Password</label></p>
             <p><input type="password" name="confirmpassword"  id="password_confirmation"></p>
-            <p id="have_account">Already have an account? Click <a href="login.php">here</a> to login.</p>
+            <p class="account">Already have an account? Click <a href="login.php">here</a> to login.</p>
             <div class="button">
               <input type="submit" value="Sign Up">
             </div>
