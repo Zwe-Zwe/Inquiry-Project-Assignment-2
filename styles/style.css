@@ -1680,18 +1680,18 @@ html {
 /* End of card */
 
 /* Enquiry Form */
-
+#enquiry-article {
 #enquiry_form h1 {
   text-align: center;
   color: var(--clr-secondary);
   margin-bottom: 10px;
 }
 
-#enquiry-article {
+
   height: auto;
   margin-top: 100px;
   margin-bottom: 40px;
-}
+
 
 #enquiry_form {
   min-height: 700px;
@@ -1804,6 +1804,7 @@ td {
   .enquiry_labels {
     width: 100%;
   }
+}
 }
 /* End of Enquiry form */
 
@@ -2518,6 +2519,12 @@ footer .container .row {
     display: none; /* Hidden by default */
   }
 
+  #user-edit h1{
+
+    text-align: center;
+
+  }
+
   #user-edit .pop-up-content {
     background: white;
     padding: 20px;
@@ -2555,7 +2562,14 @@ footer .container .row {
 
   #user-edit input[type="submit"] {
     cursor: pointer;
-    
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: black;
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    transition: all ease 0.3s;
   }
 
   #user-edit input[type="submit"]:hover {
