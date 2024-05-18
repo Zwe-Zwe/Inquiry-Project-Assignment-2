@@ -3,8 +3,8 @@
   <head>
     <title>Malaysian Sign Language</title>
     <meta charset="utf-8">
-    <meta name="description" content="volunteer">
-    <meta name="keywords" content="volunteer">
+    <meta name="description" content="signup">
+    <meta name="keywords" content="signup">
     <meta name="author" content="Daniel Sie, Zwe Htet Zaw, Paing Chan, Sherlyn Kok, Michael Wong">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link
