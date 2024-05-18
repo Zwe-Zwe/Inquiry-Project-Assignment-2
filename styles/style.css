@@ -2182,7 +2182,7 @@ footer .container .row {
 
 #admin-index {
   nav {
-    background-color: #333;
+    background-color: var(--clr-primary);
     color: #fff;
     padding: 10px;
   }
@@ -2217,7 +2217,7 @@ footer .container .row {
 
   th {
     background-color: #f2f2f2;
-    color: #333;
+    color: var(--clr-primary);
   }
 
   tr:nth-child(even) {
