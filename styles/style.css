@@ -947,6 +947,88 @@ input[type="radio"]#button-3:checked ~ .arrows#arrow-2 {
   .subnav:hover .submenu {
     display: block;
   }
+  /* Start of css for Login & Signup */
+  #login_button{
+    position: fixed;
+    top: 22px;
+    right: 70px;
+    z-index: 999;
+    max-width: 75px;
+    min-width: 75px;
+    font-size:20px;
+    cursor: pointer;
+  }
+  #login_button a{
+    text-decoration:none;
+    color: rgb(38, 38, 38);
+  }
+  #login_button a:hover{
+    text-decoration:underline;
+    background-color:white;
+  }
+  .dropdown_login {
+    position: relative;
+    display: inline-block;
+  }
+
+  .login_content {
+    display: none;
+    position: fixed;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 999;
+    right: 0px;
+    top: 75px;
+  }
+
+  .login_content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .login_content a:hover {
+    background-color: #f1f1f1;
+  }
+
+  .login_toggle {
+    display: none;
+  }
+
+  .login_toggle:checked ~ .login_content {
+    display: block;
+  }
+  #userid_button{
+    position: fixed;
+    top: 22px;
+    right: 70px;
+    z-index: 999;
+    max-width: 75px;
+    min-width: 75px;
+    font-size:20px;
+    cursor: pointer;
+  }
+  #userid_button:hover{
+    text-decoration:underline;
+  }
+  #user_info {
+    margin-top: 1.5em;
+    line-height: 2;
+    margin-bottom: 1.5em;
+  }
+  
+  #problems {
+    margin-left: 2.2em;
+  }
+  
+  @media (max-width: 767px) {
+    .user_container {
+        max-width: 80%;
+    }
+  }
+  /* End of css for Login & Signup */
 }
 /*End of CSS for phone navbar*/
 /*Start of CSS for navbar*/
@@ -1039,6 +1121,72 @@ input[type="radio"]#button-3:checked ~ .arrows#arrow-2 {
       }
     }
   }
+  /* Start of css for Login & Signup */
+  #login_button{
+    position: fixed;
+    top: 22px;
+    right: 10px;
+    z-index: 999;
+    max-width: 75px;
+    min-width: 75px;
+    font-size:20px;
+    cursor: pointer;
+  }
+  #login_button a{
+    text-decoration:none;
+    color: rgb(38, 38, 38);
+  }
+  #login_button a:hover{
+    text-decoration:underline;
+  }
+  .dropdown_login {
+    position: relative;
+    display: inline-block;
+  }
+
+  .login_content {
+    display: none;
+    position: fixed;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 999;
+    right: 0px;
+    top: 75px;
+  }
+
+  .login_content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .login_content a:hover {
+    background-color: #f1f1f1;
+  }
+
+  .login_toggle {
+    display: none;
+  }
+
+  .login_toggle:checked ~ .login_content {
+    display: block;
+  }
+  #userid_button{
+    position: fixed;
+    top: 22px;
+    right: 10px;
+    z-index: 999;
+    max-width: 75px;
+    min-width: 75px;
+    font-size:20px;
+    cursor: pointer;
+  }
+  #userid_button:hover{
+    text-decoration:underline;
+  }
+  /* End of css for Login & Signup */
 }
 /*End of CSS for navbar*/
 

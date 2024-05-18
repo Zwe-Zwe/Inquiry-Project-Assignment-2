@@ -10,9 +10,12 @@
     <link rel="icon" href="images/love-you-gesture-svgrepo-com.svg" type="images/svg">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <?php include 'header.php'; ?>
+    <header>
+      <?php include "header.php" ?>
+    </header>
     
     <section class="volunteer-process-section">
         <div class="form-container">
