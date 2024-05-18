@@ -91,6 +91,7 @@ $sql_enquiry = "CREATE TABLE IF NOT EXISTS enquiry_information(
     appointment_option VARCHAR(255) NOT NULL,
     appointment_date VARCHAR(255) NOT NULL,
     appointment_time VARCHAR(255) NOT NULL
+    
 )";
 if (!mysqli_query($conn, $sql_enquiry)) {
     echo "Error creating table: " . mysqli_error($conn);
