@@ -2595,3 +2595,71 @@ footer .container .row {
     padding: 5px 15px 5px 15px;
   }
 }
+/* Start of CSS for Login & Signup*/
+.user-body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px;
+  background: var(--clr-primary);
+}
+.user-container {
+  border: 2px solid var(--clr-accent);
+  margin: 3% 0;
+  padding: 35px 45px;
+  max-width: 700px;
+  background: var(--clr-primary);
+  border-radius: 5px;
+  animation: fadeInUp 1s ease-out;
+  min-width:500px;
+}
+.user-container h1 {
+  text-align: center;
+}
+.user-form .button {
+  padding-top:2em;
+}
+.user-form .button input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  color: var(--clr-secondary);
+  border: none;
+  font-size: 14px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  background: var(--clr-primary);
+  border: 1px solid var(--clr-accent);
+  transition: all 0.3s ease;
+}
+.user-form .button input:hover {
+  cursor: pointer;
+  color: var(--clr-primary);
+  background: var(--clr-secondary);
+}
+.user_error{
+  background: #F2DEDE;
+  color: #A94442;
+  padding-left:8px;
+  width:90%;
+  margin-bottom:1.1em;
+}
+.account{
+  font-size:12px;
+}
+#user_info {
+  margin-top: 1.5em;
+  line-height: 2;
+  margin-bottom: 1.5em;
+}
+
+#problems {
+  margin-left: 2.2em;
+}
+
+@media (max-width: 767px) {
+  .user_container {
+      max-width: 80%;
+  }
+}
+/* End of CSS for Login & Signup */
