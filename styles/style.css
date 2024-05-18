@@ -948,23 +948,23 @@ input[type="radio"]#button-3:checked ~ .arrows#arrow-2 {
     display: block;
   }
   /* Start of css for Login & Signup */
-  #login_button{
+  #login_button {
     position: fixed;
     top: 22px;
     right: 70px;
     z-index: 999;
     max-width: 75px;
     min-width: 75px;
-    font-size:20px;
+    font-size: 20px;
     cursor: pointer;
   }
-  #login_button a{
-    text-decoration:none;
+  #login_button a {
+    text-decoration: none;
     color: rgb(38, 38, 38);
   }
-  #login_button a:hover{
-    text-decoration:underline;
-    background-color:white;
+  #login_button a:hover {
+    text-decoration: underline;
+    background-color: white;
   }
   .dropdown_login {
     position: relative;
@@ -976,7 +976,7 @@ input[type="radio"]#button-3:checked ~ .arrows#arrow-2 {
     position: fixed;
     background-color: #f9f9f9;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 999;
     right: 0px;
     top: 75px;
@@ -1000,32 +1000,32 @@ input[type="radio"]#button-3:checked ~ .arrows#arrow-2 {
   .login_toggle:checked ~ .login_content {
     display: block;
   }
-  #userid_button{
+  #userid_button {
     position: fixed;
     top: 22px;
     right: 70px;
     z-index: 999;
     max-width: 75px;
     min-width: 75px;
-    font-size:20px;
+    font-size: 20px;
     cursor: pointer;
   }
-  #userid_button:hover{
-    text-decoration:underline;
+  #userid_button:hover {
+    text-decoration: underline;
   }
   #user_info {
     margin-top: 1.5em;
     line-height: 2;
     margin-bottom: 1.5em;
   }
-  
+
   #problems {
     margin-left: 2.2em;
   }
-  
+
   @media (max-width: 767px) {
     .user_container {
-        max-width: 80%;
+      max-width: 80%;
     }
   }
   /* End of css for Login & Signup */
@@ -1122,22 +1122,22 @@ input[type="radio"]#button-3:checked ~ .arrows#arrow-2 {
     }
   }
   /* Start of css for Login & Signup */
-  #login_button{
+  #login_button {
     position: fixed;
     top: 22px;
     right: 10px;
     z-index: 999;
     max-width: 75px;
     min-width: 75px;
-    font-size:20px;
+    font-size: 20px;
     cursor: pointer;
   }
-  #login_button a{
-    text-decoration:none;
+  #login_button a {
+    text-decoration: none;
     color: rgb(38, 38, 38);
   }
-  #login_button a:hover{
-    text-decoration:underline;
+  #login_button a:hover {
+    text-decoration: underline;
   }
   .dropdown_login {
     position: relative;
@@ -1149,7 +1149,7 @@ input[type="radio"]#button-3:checked ~ .arrows#arrow-2 {
     position: fixed;
     background-color: #f9f9f9;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 999;
     right: 0px;
     top: 75px;
@@ -1173,18 +1173,18 @@ input[type="radio"]#button-3:checked ~ .arrows#arrow-2 {
   .login_toggle:checked ~ .login_content {
     display: block;
   }
-  #userid_button{
+  #userid_button {
     position: fixed;
     top: 22px;
     right: 10px;
     z-index: 999;
     max-width: 75px;
     min-width: 75px;
-    font-size:20px;
+    font-size: 20px;
     cursor: pointer;
   }
-  #userid_button:hover{
-    text-decoration:underline;
+  #userid_button:hover {
+    text-decoration: underline;
   }
   /* End of css for Login & Signup */
 }
@@ -2220,8 +2220,6 @@ footer .container .row {
   }
 }
 
-
-
 #admin-index {
   nav {
     background-color: var(--clr-primary);
@@ -2369,94 +2367,94 @@ footer .container .row {
   text-align: left;
 }
 
-#management{
+#management {
   body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
     position: relative;
-}
+  }
 
-.container {
+  .container {
     display: flex;
     width: 100%;
-}
+  }
 
-.sidebar {
+  .sidebar {
     width: 200px;
     height: 100vh;
     background-color: #f4f4f4;
     padding: 20px;
-}
+  }
 
-.sidebar .logo img {
+  .sidebar .logo img {
     width: 50%;
     margin-top: 20px;
     margin-bottom: 50px;
     margin-left: 25%;
-}
+  }
 
-.sidebar nav ul {
+  .sidebar nav ul {
     list-style: none;
     padding: 0;
-}
+  }
 
-.sidebar nav ul li {
+  .sidebar nav ul li {
     margin-bottom: 30px;
-}
+  }
 
-.sidebar nav ul li a {
+  .sidebar nav ul li a {
     text-decoration: none;
     color: #333;
     font-size: 20px;
-}
+  }
 
-.sidebar nav ul li.active a {
+  .sidebar nav ul li.active a {
     font-weight: bold;
-}
+  }
 
-main {
+  main {
     flex: 1;
     padding: 20px;
     width: 100%;
-}
+  }
 
-header {
+  header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
+  }
 
-.search-container {
+  .search-container {
     display: flex;
     align-items: center;
-}
+  }
 
-.search-container input {
+  .search-container input {
     padding: 5px;
     margin-right: 10px;
-}
+  }
 
-.search-container button {
+  .search-container button {
     padding: 5px 10px;
     margin-right: 10px;
-}
+  }
 
-.user-icon img {
+  .user-icon img {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-}
+  }
 
-#table_top {
+  #table_top {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
+  }
 
-.sort_logout {
+  .sort_logout {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
@@ -2466,64 +2464,63 @@ header {
     transition: 0.3s all ease;
     border: 1px solid black;
     text-decoration: none;
-}
+  }
 
-#logout:hover {
+  .sort_logout:hover {
     background-color: #333;
     color: white;
     border: 1px solid #333;
-}
+  }
 
-.user-management {
+  .user-management {
     margin-top: 20px;
     width: 100%;
-}
+  }
 
-.user-management h1 {
-    margin-bottom: 20px;
-}
 
-table {
+
+  table {
     width: 100%;
     border-collapse: collapse;
-}
+  }
 
-table th, table td {
+  table th,
+  table td {
     border: 1px solid #ddd;
     padding: 10px;
     text-align: left;
-}
+  }
 
-table th {
+  table th {
     background-color: #f4f4f4;
-}
+  }
 
-table .status.active {
+  table .status.active {
     color: green;
-}
+  }
 
-table .status.inactive {
+  table .status.inactive {
     color: red;
-}
+  }
 
-.pagination {
+  .pagination {
     margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-}
+  }
 
-.pagination a {
+  .pagination a {
     margin: 0 5px;
     text-decoration: none;
     color: #333;
-}
+  }
 
-.pagination span {
+  .pagination span {
     margin: 0 5px;
-}
+  }
 
-#user-edit {
+  #user-edit {
     position: fixed;
     top: 0;
     left: 0;
@@ -2535,69 +2532,68 @@ table .status.inactive {
     align-items: center;
     z-index: 1000;
     display: none; /* Hidden by default */
-}
+  }
 
-#user-edit .pop-up-content {
+  #user-edit .pop-up-content {
     background: white;
     padding: 20px;
     border-radius: 10px;
     width: 300px;
     position: relative;
-}
+  }
 
-#user-edit .close-btn {
+  #user-edit .close-btn {
     position: absolute;
     top: 10px;
     right: 10px;
     text-decoration: none;
     color: black;
     font-size: 20px;
-}
+  }
 
-#user-edit form {
+  #user-edit form {
     display: flex;
     flex-direction: column;
-}
+  }
 
-#user-edit label {
+  #user-edit label {
     margin: 10px 0 5px;
-}
+  }
 
-#user-edit input[type="text"],
-#user-edit input[type="submit"] {
+  #user-edit input[type="text"],
+  #user-edit input[type="submit"] {
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
     border: 1px solid #ddd;
-}
+  }
 
-#user-edit input[type="submit"] {
+  #user-edit input[type="submit"] {
     cursor: pointer;
-}
+  }
 
-#user-edit input[type="submit"]:hover {
+  #user-edit input[type="submit"]:hover {
     background-color: #333;
     color: white;
-}
+  }
 
-#edit-button{
-  text-decoration: none;
-  background-color: #4caf50;
-  color: white;
- 
-  border-radius: 10px;
-  padding: 5px 15px 5px 15px;
-}
+  #edit-button {
+    text-decoration: none;
+    background-color: #4caf50;
+    color: white;
 
-#delete-button{
-  text-decoration: none;
-  background-color: red;
-  color: white;
-  
-  border-radius: 10px;
-  padding: 5px 15px 5px 15px;
-}
+    border-radius: 10px;
+    padding: 5px 15px 5px 15px;
+  }
 
+  #delete-button {
+    text-decoration: none;
+    background-color: red;
+    color: white;
+
+    border-radius: 10px;
+    padding: 5px 15px 5px 15px;
+  }
 }
 /* Start of CSS for Login & Signup*/
 .user-body{
