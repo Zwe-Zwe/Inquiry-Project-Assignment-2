@@ -211,7 +211,7 @@ $sql_check = "SELECT COUNT(*) AS count FROM users";
 $result = mysqli_query($conn, $sql_check);
 $row = mysqli_fetch_assoc($result);
 $count = $row['count'];
-$password = password_hash('password', PASSWORD_BCRYPT);
+$password = password_hash('admin', PASSWORD_BCRYPT);
 if ($count == 0) {
     $sql = "INSERT IGNORE users (userid, email, password) VALUES
     ('admin', 'admin@gmail.com', '$password')";
