@@ -2412,6 +2412,13 @@ footer .container .row {
   color: var(--clr-primary);
   background: var(--clr-secondary);
 }
+.user-form input{
+  width:100%;
+  border:1.5px solid var(--clr-secondary);
+  border-radius:5px;
+  margin-bottom:15px;
+  padding: 10px;
+}
 .user_error {
   background: #f2dede;
   color: #a94442;
