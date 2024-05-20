@@ -31,10 +31,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $userid = $_POST["userid"];
         $email = $_POST["email"];
         $password = $_POST["password"];
+        $password_hashed = password_hash($password, PASSWORD_BCRYPT);
 
-        $sql = "INSERT INTO users (userid, email, password) VALUES (?, ?, ?)";
+        $sql = "INSERT INTO users (userid, email, password,password_hashed) VALUES (?, ?, ?, ?)";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("sss", $userid, $email, $password);
+        $stmt->bind_param("ssss", $userid, $email, $password,$password_hashed);
         if ($stmt->execute()) {
             header("Location: index.php");
             exit();
