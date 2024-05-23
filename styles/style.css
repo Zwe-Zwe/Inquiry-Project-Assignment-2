@@ -2164,7 +2164,7 @@ footer .container .row {
   }
 
   .sidebar {
-    width: 200px;
+    width: 250px;
     height: 100vh;
     background-color: #f4f4f4;
     padding: 20px;
@@ -2190,6 +2190,7 @@ footer .container .row {
     text-decoration: none;
     color: #333;
     font-size: 20px;
+    font-weight: bold;
   }
 
   .sidebar nav ul li.active a {
