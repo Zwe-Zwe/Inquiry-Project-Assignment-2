@@ -1005,7 +1005,6 @@ input[type="radio"]#button-3:checked ~ .arrows#arrow-2 {
     top: 22px;
     right: 70px;
     z-index: 999;
-    max-width: 75px;
     min-width: 75px;
     font-size: 20px;
     cursor: pointer;
@@ -1178,7 +1177,6 @@ input[type="radio"]#button-3:checked ~ .arrows#arrow-2 {
     top: 22px;
     right: 10px;
     z-index: 999;
-    max-width: 75px;
     min-width: 75px;
     font-size: 20px;
     cursor: pointer;
@@ -1681,130 +1679,128 @@ html {
 
 /* Enquiry Form */
 #enquiry-article {
-#enquiry_form h1 {
-  text-align: center;
-  color: var(--clr-secondary);
-  margin-bottom: 10px;
-}
-
+  #enquiry_form h1 {
+    text-align: center;
+    color: var(--clr-secondary);
+    margin-bottom: 10px;
+  }
 
   height: auto;
   margin-top: 100px;
   margin-bottom: 40px;
 
-
-#enquiry_form {
-  min-height: 700px;
-  margin: auto;
-  margin-top: 10px;
-  animation: fadeInUp 1s ease-out;
-  max-width: 700px;
-  background-color: var(--clr-primary);
-  padding: 40px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 100px;
-}
-fieldset {
-  margin-bottom: 20px;
-  border: 1px solid var(--clr-secondary);
-  border-radius: 6px;
-  padding: 10px;
-}
-legend {
-  font-size: 20px;
-  font-weight: bold;
-  color: var(--clr-accent);
-}
-.enquiy_labels {
-  display: inline-block;
-  width: 100%;
-  margin-bottom: 10px;
-  color: var(--clr-accent);
-}
-input,
-select {
-  width: 100%;
-  padding: 12px;
-  margin-top: 5px;
-  box-sizing: border-box;
-  border: 1px solid var(--clr-secondary);
-  border-radius: 4px;
-  outline: none;
-  transition: background-color 0.3s;
-}
-
-input,
-select:last-child {
-  margin-bottom: 10px;
-}
-
-input[type="submit"],
-input[type="reset"] {
-  display: inline-block;
-  background-color: var(--clr-primary);
-  color: var(--clr-secondary);
-  cursor: pointer;
-  transition: background-color 0.3s;
-  width: 49%;
-}
-input[type="submit"]:hover,
-input[type="reset"]:hover {
-  background-color: var(--clr-secondary);
-  color: var(--clr-primary);
-}
-input:hover,
-select:hover {
-  background-color: #f0f0f0;
-}
-input:invalid,
-select:invalid {
-  border-color: #ff0000;
-}
-table {
-  width: 100%;
-}
-td {
-  padding: 5px;
-}
-#required_warning {
-  color: red;
-  font-style: italic;
-  font-size: 14px;
-  text-align: right;
-}
-
-.contact-method {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  margin: 30px 0 30px 0;
-}
-
-#contact-method_text {
-  margin-top: 20px;
-}
-
-.contact-method label {
-  margin-right: 20px; /* Adjust the margin as needed */
-  font-size: 12px;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(50px);
+  #enquiry_form {
+    min-height: 700px;
+    margin: auto;
+    margin-top: 10px;
+    animation: fadeInUp 1s ease-out;
+    max-width: 700px;
+    background-color: var(--clr-primary);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 100px;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  fieldset {
+    margin-bottom: 20px;
+    border: 1px solid var(--clr-secondary);
+    border-radius: 6px;
+    padding: 10px;
   }
-}
-@media only screen and (max-width: 600px) {
-  .enquiry_labels {
+  legend {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--clr-accent);
+  }
+  .enquiy_labels {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 10px;
+    color: var(--clr-accent);
+  }
+  input,
+  select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    box-sizing: border-box;
+    border: 1px solid var(--clr-secondary);
+    border-radius: 4px;
+    outline: none;
+    transition: background-color 0.3s;
+  }
+
+  input,
+  select:last-child {
+    margin-bottom: 10px;
+  }
+
+  input[type="submit"],
+  input[type="reset"] {
+    display: inline-block;
+    background-color: var(--clr-primary);
+    color: var(--clr-secondary);
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 49%;
+  }
+  input[type="submit"]:hover,
+  input[type="reset"]:hover {
+    background-color: var(--clr-secondary);
+    color: var(--clr-primary);
+  }
+  input:hover,
+  select:hover {
+    background-color: #f0f0f0;
+  }
+  input:invalid,
+  select:invalid {
+    border-color: #ff0000;
+  }
+  table {
     width: 100%;
   }
-}
+  td {
+    padding: 5px;
+  }
+  #required_warning {
+    color: red;
+    font-style: italic;
+    font-size: 14px;
+    text-align: right;
+  }
+
+  .contact-method {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 30px 0 30px 0;
+  }
+
+  #contact-method_text {
+    margin-top: 20px;
+  }
+
+  .contact-method label {
+    margin-right: 20px; /* Adjust the margin as needed */
+    font-size: 12px;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    .enquiry_labels {
+      width: 100%;
+    }
+  }
 }
 /* End of Enquiry form */
 
@@ -2152,223 +2148,8 @@ footer .container .row {
 }
 /* End of Scroll Bar */
 
-#user-create {
-  nav {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-  }
 
-  nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  nav ul li {
-    display: inline;
-    margin-right: 20px;
-  }
-
-  nav ul li a {
-    color: #fff;
-    text-decoration: none;
-  }
-  #user-create-form {
-    margin-top: 40px;
-  }
-
-  form {
-    margin-top: 20px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    width: 50%;
-    margin: 0 auto;
-  }
-
-  h1 {
-    text-align: center;
-  }
-
-  label {
-    display: block;
-    margin-bottom: 5px;
-  }
-
-  input[type="text"] {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    box-sizing: border-box;
-  }
-
-  input[type="submit"] {
-    width: 25%;
-    height: 40px;
-    background-color: #4caf50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    margin-right: 10px;
-  }
-
-  input[type="submit"]:hover {
-    background-color: #45a049;
-  }
-}
-
-#admin-index {
-  nav {
-    background-color: var(--clr-primary);
-    color: #fff;
-    padding: 10px;
-  }
-
-  nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  nav ul li {
-    display: inline;
-    margin-right: 20px;
-  }
-
-  nav ul li a {
-    color: #fff;
-    text-decoration: none;
-  }
-
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-
-  th,
-  td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-  }
-
-  th {
-    background-color: #f2f2f2;
-    color: var(--clr-primary);
-  }
-
-  tr:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-
-  tr:hover {
-    background-color: #ddd;
-  }
-
-  td a {
-    text-align: center;
-    display: inline-block;
-    padding: 5px 10px;
-    background-color: #4caf50; /* Change to your preferred button color */
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-  }
-  #delete-btn {
-    background-color: red;
-  }
-  .pop-up {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .pop-up-content {
-    border-radius: 10px;
-    background-color: #fefefe;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 65%;
-    box-shadow: 0px 0px 10px 0px #000;
-    animation: animateModal 0.4s;
-  }
-
-  @keyframes animateModal {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-
-  .close-btn {
-    color: #aaa;
-    float: right;
-    font-size: 40px;
-    font-weight: bold;
-    text-decoration: none;
-  }
-
-  .close-btn:hover,
-  .close-btn:focus {
-    color: black;
-    cursor: pointer;
-  }
-}
-
-/*Start of View Enquiry CSS*/
-#viewenquiry_title {
-  margin-top: 5em;
-  margin-left: 5em;
-  font-size: 24px;
-  border-left: var(--clr-secondary);
-  border-bottom: var(--clr-secondary);
-  border-radius: 2em;
-}
-
-#view_enquiry_table {
-  border: collapse;
-}
-
-.enquiy_table_header {
-  font-size: 15px;
-  font-weight: bold;
-  padding: 1.5em;
-  text-align: center;
-  background-color: var(--clr-secondary);
-  color: white;
-  border-bottom: 0.3px dashed black;
-}
-
-.enquiry_table_row {
-  padding: 1.5em;
-  background-color: white;
-  color: black;
-  border-left: 0.3px dashed black;
-  border-right: 0.3px dashed black;
-  font-size: 13px;
-  text-align: left;
-}
-
-#management {
+#management, #viewenquiry {
   body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -2479,8 +2260,6 @@ footer .container .row {
     width: 100%;
   }
 
-
-
   table {
     width: 100%;
     border-collapse: collapse;
@@ -2505,7 +2284,6 @@ footer .container .row {
     color: red;
   }
 
-
   #user-edit {
     position: fixed;
     top: 0;
@@ -2520,10 +2298,8 @@ footer .container .row {
     display: none; /* Hidden by default */
   }
 
-  #user-edit h1{
-
+  #user-edit h1 {
     text-align: center;
-
   }
 
   #user-edit .pop-up-content {
@@ -2552,14 +2328,12 @@ footer .container .row {
     margin: 10px 0 5px;
   }
 
-  #user-edit input[type="text"]
-   {
+  #user-edit input[type="text"] {
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
     border: 1px solid #ddd;
   }
-
 
   #user-edit input[type="submit"] {
     cursor: pointer;
@@ -2596,8 +2370,9 @@ footer .container .row {
     padding: 5px 15px 5px 15px;
   }
 }
+
 /* Start of CSS for Login & Signup*/
-.user-body{
+.user-body {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2612,13 +2387,13 @@ footer .container .row {
   background: var(--clr-primary);
   border-radius: 5px;
   animation: fadeInUp 1s ease-out;
-  min-width:500px;
+  min-width: 500px;
 }
 .user-container h1 {
   text-align: center;
 }
 .user-form .button {
-  padding-top:2em;
+  padding-top: 2em;
 }
 .user-form .button input {
   height: 100%;
@@ -2638,15 +2413,22 @@ footer .container .row {
   color: var(--clr-primary);
   background: var(--clr-secondary);
 }
-.user_error{
-  background: #F2DEDE;
-  color: #A94442;
-  padding-left:8px;
-  width:90%;
-  margin-bottom:1.1em;
+.user-form input{
+  width:100%;
+  border:1.5px solid var(--clr-secondary);
+  border-radius:5px;
+  margin-bottom:15px;
+  padding: 10px;
 }
-.account{
-  font-size:12px;
+.user_error {
+  background: #f2dede;
+  color: #a94442;
+  padding-left: 8px;
+  width: 90%;
+  margin-bottom: 1.1em;
+}
+.account {
+  font-size: 12px;
 }
 #user_info {
   margin-top: 1.5em;
@@ -2660,7 +2442,26 @@ footer .container .row {
 
 @media (max-width: 767px) {
   .user_container {
-      max-width: 80%;
+    max-width: 80%;
   }
 }
 /* End of CSS for Login & Signup */
+
+/*Start of View Enquiry CSS */
+
+#enquiry_padding_top{
+  height:50px;
+}
+
+#enquiry_padding_bottom{
+  height:200px;
+}
+
+#viewenquiry_title{
+  padding-top:1em;
+  padding-left: 2em;
+  padding-bottom: 1em;
+  color: #848792;
+  font-size:30px;
+  font-weight:bold;
+}
