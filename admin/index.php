@@ -115,7 +115,7 @@ $result = $conn->query($sql);
                     <li><a href="#">User Management</a></li>
                     <li><a href="index.php?action=add">Add New User</a></li>
                     <li><a href="#">Enquiry Forms</a></li> 
-                    <li class="active"><a href="#">Job Volunteer Forms</a></li> 
+                    <li><a href="#">Volunteer Forms</a></li> 
                 </ul>
             </nav>
         </aside>
