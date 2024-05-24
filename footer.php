@@ -48,8 +48,10 @@
               >Acknowledgements</a
             >
             <a class="footer-essentials" href="enhancement1.php"
-              >Enhancements</a
+              >Enhancements1</a
             >
+            <a class="footer-essentials" href="enhancement2.php"
+              >Enhancements2</a>
           </div>
         </div>
       </div>

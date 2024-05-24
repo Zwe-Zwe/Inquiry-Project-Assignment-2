@@ -1005,7 +1005,6 @@ input[type="radio"]#button-3:checked ~ .arrows#arrow-2 {
     top: 22px;
     right: 70px;
     z-index: 999;
-    max-width: 75px;
     min-width: 75px;
     font-size: 20px;
     cursor: pointer;
@@ -1178,7 +1177,6 @@ input[type="radio"]#button-3:checked ~ .arrows#arrow-2 {
     top: 22px;
     right: 10px;
     z-index: 999;
-    max-width: 75px;
     min-width: 75px;
     font-size: 20px;
     cursor: pointer;
@@ -2166,7 +2164,7 @@ footer .container .row {
   }
 
   .sidebar {
-    width: 200px;
+    width: 250px;
     height: 100vh;
     background-color: #f4f4f4;
     padding: 20px;
@@ -2192,6 +2190,7 @@ footer .container .row {
     text-decoration: none;
     color: #333;
     font-size: 20px;
+    font-weight: bold;
   }
 
   .sidebar nav ul li.active a {
@@ -2413,6 +2412,13 @@ footer .container .row {
   cursor: pointer;
   color: var(--clr-primary);
   background: var(--clr-secondary);
+}
+.user-form input{
+  width:100%;
+  border:1.5px solid var(--clr-secondary);
+  border-radius:5px;
+  margin-bottom:15px;
+  padding: 10px;
 }
 .user_error {
   background: #f2dede;
