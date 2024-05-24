@@ -2302,12 +2302,23 @@ footer .container .row {
     text-align: center;
   }
 
-  #user-edit .pop-up-content {
+  #user-edit .pop-up-content{
     background: white;
     padding: 20px;
     border-radius: 10px;
     width: 40%;
     position: relative;
+  }
+
+  #pop-up-header{
+    font-size: 24px;
+    font-weight: bold;
+    border-left:3px solid var(--clr-accent);
+    border-top:3px solid var(--clr-accent);
+    border-radius:0.5em;
+    padding-left:1em;
+    padding-top:.3em;
+    width: 190px;
   }
 
   #user-edit .close-btn {
@@ -2464,4 +2475,12 @@ footer .container .row {
   color: #848792;
   font-size:30px;
   font-weight:bold;
+}
+
+#view-button{
+  text-decoration: none;
+  background-color: #DFBC39;
+  color: white;
+  border-radius: 10px;
+  padding: 5px 20px 5px 20px;
 }

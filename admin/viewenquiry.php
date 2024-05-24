@@ -41,8 +41,6 @@
         <!-- search and sort goes here -->
         <div id="top_ui">
           <h1>View Enquiries</h1>
-
-
         </div>
 
 
@@ -109,10 +107,15 @@
                 $stmt->execute();
                 $result = $stmt->get_result();
                 $row = $result->fetch_assoc();
-                $title = $row['title'];
-                $date = $row['date'];
-                $description = $row['description'];
-                $photo = $row['photo'];
+                $fullname = $row['first_name'] . " " . $row['last_name'];
+                $email = $row['email'];
+                $countryCode = $row['countryCode'];
+                $phoneNumber = $row['phoneNumber'];
+                $service_type = $row['service_type'];
+                $contact_method = $row['contact_method'];
+                $appointment_option = $row['appointment_option'];
+                $appointment_date = $row['appointment_date'];
+                $appointment_time = $row['appointment_time'];
                 $show_info = 1;
               }
             }
@@ -123,13 +126,35 @@
           }
           ?>
         </table>
+        <?php if (isset($_GET['action']) && ($_GET['action'] == 'view' && isset($_GET['id']))): ?>
+          <div id="user-edit" class="pop-up" style="display: flex;">
+            <div class="pop-up-content">
+              <div id="pop-up-header">
+                <p>Full Enquiry</p>
+              </div>
+              <br>
+              <a class="close-btn" href="viewenquiry.php">&times;</a>
+
+              </p>Name: <?php echo $fullname; ?></p>
+              <p>E-mail: <?php echo $email ;?></p>
+              <p>Country Code: <?php echo $countryCode ;?></p>
+              <p>Phone Number: <?php echo $phoneNumber ;?></p>
+              <p>Service Type: <?php echo $service_type ;?></p>
+              <p>Contact_Method: <?php echo $contact_method ;?></p>
+              <p>Appointment Option: <?php echo $appointment_option ;?></p>
+              <p>Appointment Date: <?php echo $appointment_date ;?></p>
+              <p>Appointment Time:<?php echo $appointment_time ;?></p>
+
+            </div>
+          </div>
+        <?php endif; ?>
   </section>
   <br><br>
 
 
 
   <div id="enquiry_padding"></div>
-  <?php include "../footer.php"; ?>
+
 </body>
 
 </html>
