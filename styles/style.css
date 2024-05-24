@@ -2256,7 +2256,7 @@ footer .container .row {
     border: 1px solid #333;
   }
 
-  .user-management {
+  .user-management, #viewenquiry {
     margin-top: 20px;
     width: 100%;
   }

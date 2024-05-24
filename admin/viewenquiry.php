@@ -16,67 +16,120 @@
 </head>
 
 <body>
-  <?php include "../header.php"; ?>
 
-  <article>
+
+  <section id="viewenquiry">
     <!--Picture and credentials section-->
-    <section id="viewenquiry">
-      <br>
-      <div id="viewenquiry_title">View Enquiries</div>
+    <div class="container">
 
-      <!--padding in between sections-->  
-      <table>
-        <tr>
-          <th class="enquiry_table_header">ID</th>
-          <th class="enquiry_table_header">Name</th>
-          <th class="enquiry_table_header">Service Type</th>
-          <th class="enquiry_table_header">Contact Method</th>
-          <th class="enquiry_table_header">Appointment Option</th>
-        </tr>
+      <aside class="sidebar">
+        <div class="logo"><img src="../images/logo2.png"></div>
+        <nav>
+          <ul>
+            <li><a href="#">User Management</a></li>
+            <li><a href="index.php?action=add">Add New User</a></li>
+            <li><a href="#">Enquiry Forms</a></li>
+            <li class="active"><a href="#">Job Volunteer Forms</a></li>
+          </ul>
+        </nav>
+      </aside>
+      <main>
+        <header>
 
-        <?php
-        $servername = 'localhost';
-        $username = 'root';
-        $password = '';
-        $dbname = 'msl';
+        </header>
 
-        $conn = mysqli_connect($servername, $username, $password, $dbname);
+        <!-- search and sort goes here -->
+        <div id="top_ui">
+          <h1>View Enquiries</h1>
 
-        if (!$conn) {
-          die("Connection failed: " . mysqli_connect_error());
-        }
 
-        $sql = "SELECT * FROM enquiry_information";
+        </div>
 
-        $result = mysqli_query($conn, $sql);
-        if (mysqli_num_rows($result) > 0) {
-          while ($row = mysqli_fetch_assoc($result)) {
-            ?>
 
-            <tr>
-              <td class="enquiry_table_row"><?php echo $row["id"]; ?></td>
-              <td class="enquiry_table_row"><?php echo $row["first_name"] . " " . $row['last_name']; ?></td>
-              <td class="enquiry_table_row"><?php echo $row["service_type"]; ?></td>
-              <td class="enquiry_table_row"><?php echo $row["contact_method"]; ?></td>
-              <td class="enquiry_table_row"><?php echo $row["appointment_option"]; ?></td>
+        <!--padding in between sections-->
+        <table>
+          <tr>
+            <th class="enquiry_table_header">ID</th>
+            <th class="enquiry_table_header">Name</th>
+            <th class="enquiry_table_header">Service Type</th>
+            <th class="enquiry_table_header">Contact Method</th>
+            <th class="enquiry_table_header">Appointment Option</th>
+            <th class="enquiry_table_header">Options</th>
+          </tr>
 
-            </tr>
+          <?php
+          $servername = 'localhost';
+          $username = 'root';
+          $password = '';
+          $dbname = 'msl';
 
-            <?php
+          $conn = mysqli_connect($servername, $username, $password, $dbname);
+
+          if (!$conn) {
+            die("Connection failed: " . mysqli_connect_error());
           }
-        } else {
-          echo "0 results";
-        }
-        mysqli_close($conn)
+
+          $sql = "SELECT * FROM enquiry_information";
+          $result = $conn->query($sql);
+
+          if (!$result) {
+            die("Invalid query!");
+          }
+          while ($row = $result->fetch_assoc()) {
+            echo "
+          <tr>
+              <td>{$row['id']}</td>
+              <td>{$row['first_name']} {$row['last_name']}</td>
+              <td>{$row['service_type']}</td>
+              <td>{$row['contact_method']}</td>
+              <td>{$row['appointment_option']}</td>";
+            echo "
+              <td>
+                  <a id='view-button' href='viewenquiry.php?action=view&id={$row['id']}'>View</a>
+                  <a id='delete-button' href='viewenquiry.php?action=delete&id={$row['id']}'>Delete</a>
+              </td>
+          </tr>
+          ";
+
+            if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['action'])) {
+              if ($_GET['action'] == 'delete' && isset($_GET['id'])) {
+                $id = $_GET['id'];
+                $sql = "DELETE FROM enquiry_information WHERE id=?";
+                $stmt = $conn->prepare($sql);
+                $stmt->bind_param("i", $id);
+                $stmt->execute();
+                header("Location: viewenquiry.php");
+                exit();
+              } else if ($_GET['action'] == 'view' && isset($_GET['id'])) {
+                // Handle view form display
+                $id = $_GET['id'];
+                $sql = "SELECT * FROM enquiry_information WHERE id=?";
+                $stmt = $conn->prepare($sql);
+                $stmt->bind_param("i", $id);
+                $stmt->execute();
+                $result = $stmt->get_result();
+                $row = $result->fetch_assoc();
+                $title = $row['title'];
+                $date = $row['date'];
+                $description = $row['description'];
+                $photo = $row['photo'];
+                $show_info = 1;
+              }
+            }
+            if (isset($_GET['submit'])) {
+              $search = $_GET['search'];
+
+            }
+          }
           ?>
-      </table>
-    </section>
-    <br><br>
+        </table>
+  </section>
+  <br><br>
 
-    
 
-    <div id="enquiry_padding"></div>
-    <?php include "../footer.php"; ?>
+
+  <div id="enquiry_padding"></div>
+  <?php include "../footer.php"; ?>
 </body>
 
 </html>
