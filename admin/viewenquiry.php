@@ -26,10 +26,10 @@
         <div class="logo"><img src="../images/logo2.png"></div>
         <nav>
           <ul>
-            <li><a href="#">User Management</a></li>
+            <li><a href="index.php">User Management</a></li>
             <li><a href="index.php?action=add">Add New User</a></li>
             <li><a href="#">Enquiry Forms</a></li>
-            <li class="active"><a href="#">Job Volunteer Forms</a></li>
+            <li class="active"><a href="#">Volunteer Forms</a></li>
           </ul>
         </nav>
       </aside>
@@ -135,7 +135,7 @@
               <br>
               <a class="close-btn" href="viewenquiry.php">&times;</a>
 
-              </p>Name: <?php echo $fullname; ?></p>
+              <p>Name: <?php echo $fullname; ?></p>
               <p>E-mail: <?php echo $email ;?></p>
               <p>Country Code: <?php echo $countryCode ;?></p>
               <p>Phone Number: <?php echo $phoneNumber ;?></p>
