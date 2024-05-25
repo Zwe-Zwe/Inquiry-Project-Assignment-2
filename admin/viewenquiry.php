@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body>
+<main>
 
 
   <section id="viewenquiry">
@@ -41,13 +41,25 @@
         <!-- search and sort goes here -->
         <div id="top_ui">
           <h1>View Enquiries</h1>
+
+          <div>
+            <form id="search-form">
+              <input type="text" name="search" value="<?php if(isset($_GET['search'])){echo $_GET['search']}" class="search-bar" placeholder="Search...">
+              <br>
+              <div class="search-submit">
+                <a><img src="../images/search_icon.svg" alt="search_icon" title="Continue searching"></a>
+              </div>
+
+            </form>
+          </div>
         </div>
 
+        <br>
 
         <!--padding in between sections-->
         <table>
           <tr>
-            <th class="enquiry_table_header">ID</th>
+            <th class="enquiry_table_header">No.</th>
             <th class="enquiry_table_header">Name</th>
             <th class="enquiry_table_header">Service Type</th>
             <th class="enquiry_table_header">Contact Method</th>
@@ -61,6 +73,8 @@
           $password = '';
           $dbname = 'msl';
 
+          $count = 1;
+
           $conn = mysqli_connect($servername, $username, $password, $dbname);
 
           if (!$conn) {
@@ -69,7 +83,7 @@
 
           $sql = "SELECT * FROM enquiry_information";
           $result = $conn->query($sql);
-        
+
 
           if (!$result) {
             die("Invalid query!");
@@ -77,7 +91,7 @@
           while ($row = $result->fetch_assoc()) {
             echo "
           <tr>
-              <td>{$row['id']}</td>
+              <td>$count</td>
               <td>{$row['first_name']} {$row['last_name']}</td>
               <td>{$row['service_type']}</td>
               <td>{$row['contact_method']}</td>
@@ -85,10 +99,13 @@
             echo "
               <td>
                   <a id='view-button' href='viewenquiry.php?action=view&id={$row['id']}'>View</a>
-                  <a id='delete-button' href='viewenquiry.php?action=delete&id={$row['id']}'>Delete</a>
+                  <a id='delete-button' href='viewenquiry.php?action=delete_confirmation&id={$row['id']}'>Delete</a>
               </td>
           </tr>
+
+          
           ";
+            $count = $count + 1;
 
             if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['action'])) {
               if ($_GET['action'] == 'delete' && isset($_GET['id'])) {
@@ -124,7 +141,29 @@
               $search = $_GET['search'];
 
             }
+
+            if (isset($_GET['action']) && ($_GET['action'] == 'delete_confirmation' && isset($_GET['id']))) {
+
+
+              echo "<div id='user-edit' class='pop-up' style='display: flex;'>
+                <div class='pop-up-content'>  
+                  <div id='pop-up-header'>
+                    <p>Delete Confirmation</p>
+                  </div>
+                  
+                  <br>
+                  <a class='close-btn' href='viewenquiry.php'>&times;</a>
+                  <p>Are you sure with deleting?</p>
+                  <a id='delete-button' href='viewenquiry.php?action=delete&id={$row['id']}'>Delete</a>
+                  <a class='exit-btn' href='viewenquiry.php'>Exit</a>
+  
+                </div>
+              </div>";
+            }
+
           }
+
+
           ?>
         </table>
         <?php if (isset($_GET['action']) && ($_GET['action'] == 'view' && isset($_GET['id']))): ?>
@@ -137,24 +176,27 @@
               <a class="close-btn" href="viewenquiry.php">&times;</a>
 
               <p>Name: <?php echo $fullname; ?></p>
-              <p>E-mail: <?php echo $email ;?></p>
-              <p>Country Code: <?php echo $countryCode ;?></p>
-              <p>Phone Number: <?php echo $phoneNumber ;?></p>
-              <p>Service Type: <?php echo $service_type ;?></p>
-              <p>Contact Method: <?php echo $contact_method ;?></p>
-              <p>Appointment Option: <?php echo $appointment_option ;?></p>
-              <p>Appointment Date: <?php echo $appointment_date ;?></p>
-              <p>Appointment Time:<?php echo $appointment_time ;?></p>
+              <p>E-mail: <?php echo $email; ?></p>
+              <p>Country Code: <?php echo $countryCode; ?></p>
+              <p>Phone Number: <?php echo $phoneNumber; ?></p>
+              <p>Service Type: <?php echo $service_type; ?></p>
+              <p>Contact Method: <?php echo $contact_method; ?></p>
+              <p>Appointment Option: <?php echo $appointment_option; ?></p>
+              <p>Appointment Date: <?php echo $appointment_date; ?></p>
+              <p>Appointment Time:<?php echo $appointment_time; ?></p>
 
             </div>
           </div>
         <?php endif; ?>
+
+
   </section>
   <br><br>
+</main>
 
 
 
-  <div id="enquiry_padding"></div>
+<div id="enquiry_padding"></div>
 
 </body>
 
