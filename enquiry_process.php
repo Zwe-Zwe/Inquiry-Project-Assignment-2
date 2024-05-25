@@ -32,16 +32,17 @@
                     // Final confirmation and insertion into the database
                     $email = $_POST['email'];
                     $phNum = $_POST['phoneNumber'];
+                    $contact_method = implode(",", $_POST['contact_method']);
                     
                     $email_exist = mysqli_query($conn, "SELECT email FROM enquiry_information WHERE email = '$email'");
                     $phNum_exist = mysqli_query($conn, "SELECT phoneNumber FROM enquiry_information WHERE phoneNumber = '$phNum'"); // Changed to phone_number
                     
                     if (mysqli_num_rows($email_exist) > 0) $errors['email'] = "EMAIL ALREADY EXISTS.";
                     if (mysqli_num_rows($phNum_exist) > 0) $errors['phNum'] = "PHONE NUMBER ALREADY EXISTS.";
-
+                    
                     if (empty($errors)) {
                         $stmt = $conn->prepare("INSERT INTO enquiry_information (first_name, last_name, email, countryCode, phoneNumber, service_type, contact_method, appointment_option, appointment_date, appointment_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-                        $stmt->bind_param("ssssssssss", $_POST['first_name'], $_POST['last_name'], $email, $_POST['countryCode'], $phNum, $_POST['service'], $_POST['contact_method'], $_POST['appointment_option'], $_POST['appointmentDate'], $_POST['appointmentTime']);
+                        $stmt->bind_param("ssssssssss", $_POST['first_name'], $_POST['last_name'], $email, $_POST['countryCode'], $phNum, $_POST['service'], $contact_method, $_POST['appointment_option'], $_POST['appointmentDate'], $_POST['appointmentTime']);
 
                         if ($stmt->execute()) {
                             header("Location: enquiry-service.php");
@@ -64,7 +65,7 @@
                     $countryCode = filter_input(INPUT_POST, "countryCode", FILTER_SANITIZE_STRING);
                     $phNum = filter_input(INPUT_POST, "phoneNumber", FILTER_SANITIZE_STRING);
                     $service = filter_input(INPUT_POST, "service", FILTER_SANITIZE_STRING);
-                    $contactMethod = isset($_POST['contact_method']) ? implode(", ", $_POST['contact_method']) : '';
+                    $contactMethod = isset($_POST['contact_method']) ? implode(",", $_POST['contact_method']) : '';
                     $appointment = filter_input(INPUT_POST, "appointment_option", FILTER_SANITIZE_STRING);
                     $date = filter_input(INPUT_POST, "appointmentDate", FILTER_SANITIZE_STRING);
                     $time = filter_input(INPUT_POST, "appointmentTime", FILTER_SANITIZE_STRING);

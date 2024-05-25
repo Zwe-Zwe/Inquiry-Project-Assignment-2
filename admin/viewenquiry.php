@@ -69,6 +69,7 @@
 
           $sql = "SELECT * FROM enquiry_information";
           $result = $conn->query($sql);
+        
 
           if (!$result) {
             die("Invalid query!");
@@ -140,7 +141,7 @@
               <p>Country Code: <?php echo $countryCode ;?></p>
               <p>Phone Number: <?php echo $phoneNumber ;?></p>
               <p>Service Type: <?php echo $service_type ;?></p>
-              <p>Contact_Method: <?php echo $contact_method ;?></p>
+              <p>Contact Method: <?php echo $contact_method ;?></p>
               <p>Appointment Option: <?php echo $appointment_option ;?></p>
               <p>Appointment Date: <?php echo $appointment_date ;?></p>
               <p>Appointment Time:<?php echo $appointment_time ;?></p>
