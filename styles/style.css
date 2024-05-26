@@ -2464,35 +2464,44 @@ footer .container .row {
   display:flex;
   flex-direction:column;
 }
-#top_ui #search-form{
-  display:flex;
-  flex-direction: row;
+
+#top_ui table{
+  border-collapse: collapse;
+  width:60%;
+  color:white;
+}
+
+#top_ui table td{
+  background-color: #504ce4;
+  border:none;
+}
+
+#top_ui table td:hover{
+  transition-duration:0.3s;
+  filter:brightness(120%);
 }
 
 #top_ui .search-bar{
-  border-radius: 1em;
-  padding: 0.2em 1em 0.2em 1em;
-  font-size: 15px;
-  
-
+  border:none;
+  background-color:#504ce4; 
+  color:white;
+  font-size:22px;
 } 
 
-#top_ui .search-submit{
-  border-radius: 0em;
-  background-color: #FFFFFF;
-  border-color: var(--clr-secondary);
-  padding: 0.2em .5em 0.2em .5em;
-  width: 100px;
-  height:50px;
-  border-radius: 1em;
-  font-size:28px;
-}
-#top_ui img{
-  width:40%;
-  height:40%;
+#top_ui .search-bar::placeholder{
+  color:white;
+  font-size:22px;
+  font-style:italic; 
+} 
+
+#top_ui .search-icon{
+  width:100%;
+  height:100%;
 }
 
-
+#top_ui .search-td{
+  width:10%;
+}
 
 #enquiry_padding_top{
   height:50px;
