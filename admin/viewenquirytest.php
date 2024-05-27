@@ -29,6 +29,7 @@
                             <li><a href="index.php?action=add">Add New User</a></li>
                             <li><a href="#viewenquirytest.php">Enquiry Forms</a></li>
                             <li class="active"><a href="#">Volunteer Forms</a></li>
+                            <li><a  href="../index.php">Logout</a></li>
                         </ul>
                     </nav>
                 </aside>
@@ -38,10 +39,11 @@
                     <!-- search and sort goes here -->
                     <div id="top_ui">
                         <h1>View Enquiries</h1>
+
                         <form>
                             <table>
                                 <tr>
-                                    <td colspan=4><input type="text" class="search-bar" name="search" value="<?php if (isset($_GET['search'])) {
+                                    <td><input type="text" class="search-bar" name="search" value="<?php if (isset($_GET['search'])) {
                                         echo $_GET['search'];
                                     } ?>" placeholder="Search..."></td>
                                     <td class="search-td"><a><img src="../images/search_icon.png" alt="search-icon"
@@ -50,7 +52,11 @@
                                 </tr>
                             </table>
                         </form>
+                        
+                        
+
                     </div>
+
 
                     <br>
 
@@ -104,36 +110,36 @@
 
                                 if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['action'])) {
                                     if ($_GET['action'] == 'delete' && isset($_GET['id'])) {
-                                      $id = $_GET['id'];
-                                      $sql = "DELETE FROM enquiry_information WHERE id=?";
-                                      $stmt = $conn->prepare($sql);
-                                      $stmt->bind_param("i", $id);
-                                      $stmt->execute();
-                                      header("Location: viewenquiry.php");
-                                      exit();
+                                        $id = $_GET['id'];
+                                        $sql = "DELETE FROM enquiry_information WHERE id=?";
+                                        $stmt = $conn->prepare($sql);
+                                        $stmt->bind_param("i", $id);
+                                        $stmt->execute();
+                                        header("Location: viewenquiry.php");
+                                        exit();
                                     } else if ($_GET['action'] == 'view' && isset($_GET['id'])) {
-                                      // Handle view form display
-                                      $id = $_GET['id'];
-                                      $sql = "SELECT * FROM enquiry_information WHERE id=?";
-                                      $stmt = $conn->prepare($sql);
-                                      $stmt->bind_param("i", $id);
-                                      $stmt->execute();
-                                      $result = $stmt->get_result();
-                                      $row = $result->fetch_assoc();
-                                      $fullname = $row['first_name'] . " " . $row['last_name'];
-                                      $email = $row['email'];
-                                      $countryCode = $row['countryCode'];
-                                      $phoneNumber = $row['phoneNumber'];
-                                      $service_type = $row['service_type'];
-                                      $contact_method = $row['contact_method'];
-                                      $appointment_option = $row['appointment_option'];
-                                      $appointment_date = $row['appointment_date'];
-                                      $appointment_time = $row['appointment_time'];
-                                      $show_info = 1;
+                                        // Handle view form display
+                                        $id = $_GET['id'];
+                                        $sql = "SELECT * FROM enquiry_information WHERE id=?";
+                                        $stmt = $conn->prepare($sql);
+                                        $stmt->bind_param("i", $id);
+                                        $stmt->execute();
+                                        $result = $stmt->get_result();
+                                        $row = $result->fetch_assoc();
+                                        $fullname = $row['first_name'] . " " . $row['last_name'];
+                                        $email = $row['email'];
+                                        $countryCode = $row['countryCode'];
+                                        $phoneNumber = $row['phoneNumber'];
+                                        $service_type = $row['service_type'];
+                                        $contact_method = $row['contact_method'];
+                                        $appointment_option = $row['appointment_option'];
+                                        $appointment_date = $row['appointment_date'];
+                                        $appointment_time = $row['appointment_time'];
+                                        $show_info = 1;
                                     }
-                                  }
+                                }
 
-                                  if (isset($_GET['action']) && ($_GET['action'] == 'delete_confirmation' && isset($_GET['id']))) {
+                                if (isset($_GET['action']) && ($_GET['action'] == 'delete_confirmation' && isset($_GET['id']))) {
 
 
                                     echo "<div id='user-edit' class='pop-up' style='display: flex;'>
@@ -150,13 +156,13 @@
                           
                                     </div>
                                   </div>";
-                                  }
+                                }
 
-                                  
+
                             }
 
-                             if (isset($_GET['action']) && ($_GET['action'] == 'view' && isset($_GET['id']))){
-                                echo" <div id='user-edit' class='pop-up' style='display: flex;'>
+                            if (isset($_GET['action']) && ($_GET['action'] == 'view' && isset($_GET['id']))) {
+                                echo " <div id='user-edit' class='pop-up' style='display: flex;'>
                                   <div class='pop-up-content'>
                                     <div id='pop-up-header'>
                                       <p>Full Enquiry</p>
@@ -176,8 +182,8 @@
                       
                                   </div>
                                 </div>";
-                             }
-                              
+                            }
+
                         } else {
                             echo "<tr><td colspan='5'>No record found. Please search again, or reset.</td></tr>";
                         }

@@ -2459,7 +2459,7 @@ footer .container .row {
 /* End of CSS for Login & Signup */
 
 /*Start of View Enquiry CSS */
-
+#viewenquiry{
 #top_ui{
   display:flex;
   flex-direction:column;
@@ -2526,4 +2526,7 @@ footer .container .row {
   color: white;
   border-radius: 10px;
   padding: 5px 20px 5px 20px;
+}
+
+
 }
