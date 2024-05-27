@@ -98,7 +98,7 @@
                                     <td>{$row['appointment_option']}</td>
                                     <td>
                                         <a id='view-button' href='viewenquirytest.php?action=view&id={$row['id']}'>View</a>
-                                        <a id='delete-button' href='viewenquirytest.php?action=delete&id={$row['id']}' onclick=\"return confirm('Are you sure you want to delete this record?');\">Delete</a>
+                                        <a id='delete-button' href='viewenquirytest.php?action=delete&id={$row['id']}'>Delete</a>
                                     </td>
                                 </tr>";
 
