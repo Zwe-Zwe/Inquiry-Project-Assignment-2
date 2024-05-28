@@ -2148,8 +2148,8 @@ footer .container .row {
 }
 /* End of Scroll Bar */
 
-
-#management, #viewenquiry {
+#management,
+#viewenquiry {
   body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -2255,7 +2255,8 @@ footer .container .row {
     border: 1px solid #333;
   }
 
-  .user-management, #viewenquiry {
+  .user-management,
+  #viewenquiry {
     margin-top: 20px;
     width: 100%;
   }
@@ -2302,7 +2303,7 @@ footer .container .row {
     text-align: center;
   }
 
-  #user-edit .pop-up-content{
+  #user-edit .pop-up-content {
     background: white;
     padding: 20px;
     border-radius: 10px;
@@ -2310,14 +2311,14 @@ footer .container .row {
     position: relative;
   }
 
-  #pop-up-header{
+  #pop-up-header {
     font-size: 24px;
     font-weight: bold;
-    border-left:3px solid var(--clr-accent);
-    border-top:3px solid var(--clr-accent);
-    border-radius:0.5em;
-    padding-left:1em;
-    padding-top:.3em;
+    border-left: 3px solid var(--clr-accent);
+    border-top: 3px solid var(--clr-accent);
+    border-radius: 0.5em;
+    padding-left: 1em;
+    padding-top: 0.3em;
     width: 190px;
   }
 
@@ -2424,11 +2425,11 @@ footer .container .row {
   color: var(--clr-primary);
   background: var(--clr-secondary);
 }
-.user-form input{
-  width:100%;
-  border:1.5px solid var(--clr-secondary);
-  border-radius:5px;
-  margin-bottom:15px;
+.user-form input {
+  width: 100%;
+  border: 1.5px solid var(--clr-secondary);
+  border-radius: 5px;
+  margin-bottom: 15px;
   padding: 10px;
 }
 .user_error {
@@ -2459,66 +2460,66 @@ footer .container .row {
 /* End of CSS for Login & Signup */
 
 /*Start of View Enquiry CSS */
-#viewenquiry{
-#top_ui{
-  display:flex;
-  flex-direction:column;
-}
+#viewenquiry {
+  #top_ui {
+    display: flex;
+    flex-direction: column;
+  }
 
-#top_ui table{
-  border-collapse: collapse;
-  width:60%;
-  color:white;
-}
+  #top_ui table {
+    border-collapse: collapse;
+    width: 60%;
+    color: white;
+  }
 
-#top_ui table td{
-  background-color: #504ce4;
-  border:none;
-}
+  #top_ui table td {
+    background-color: #504ce4;
+    border: none;
+  }
 
-#top_ui table td:hover{
-  transition-duration:0.3s;
-  filter:brightness(120%);
-}
+  #top_ui table td:hover {
+    transition-duration: 0.3s;
+    filter: brightness(120%);
+  }
 
-#top_ui .search-bar{
-  border:none;
-  background-color:#504ce4; 
-  color:white;
-  font-size:22px;
-} 
+  #top_ui .search-bar {
+    border: none;
+    background-color: #504ce4;
+    color: white;
+    font-size: 22px;
+  }
 
-#top_ui .search-bar::placeholder{
-  color:white;
-  font-size:22px;
-  font-style:italic; 
-} 
+  #top_ui .search-bar::placeholder {
+    color: white;
+    font-size: 22px;
+    font-style: italic;
+  }
 
-#top_ui .search-icon{
-  width:100%;
-  height:100%;
-}
+  #top_ui .search-icon {
+    width: 100%;
+    height: 100%;
+  }
 
-#top_ui .search-td{
-  width:10%;
-}
+  #top_ui .search-td {
+    width: 10%;
+  }
 
-#enquiry_padding_top{
-  height:50px;
-}
+  #enquiry_padding_top {
+    height: 50px;
+  }
 
-#enquiry_padding_bottom{
-  height:200px;
-}
+  #enquiry_padding_bottom {
+    height: 200px;
+  }
 
-#viewenquiry_title{
-  padding-top:1em;
-  padding-left: 2em;
-  padding-bottom: 1em;
-  color: #848792;
-  font-size:30px;
-  font-weight:bold;
-}
+  #viewenquiry_title {
+    padding-top: 1em;
+    padding-left: 2em;
+    padding-bottom: 1em;
+    color: #848792;
+    font-size: 30px;
+    font-weight: bold;
+  }
 
 #view-button{
   text-decoration: none;
