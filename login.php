@@ -34,7 +34,7 @@
     <?php if (!isset($_SESSION['login_user'])) { ?>
       <section class="user-body">
           <div class="user-container">
-              <h1>LOGIN</h1>
+              <h1>Login</h1>
               <?php
               if (isset($_GET['error']) && !empty($_GET['error'])) {
                   echo "<p class='user_error'>" . $_GET['error'] . "</p>";

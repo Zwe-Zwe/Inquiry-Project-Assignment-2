@@ -2,7 +2,7 @@
 // Database connection
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = ""; // Replace with your database password
 $dbname = "MSL";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -70,8 +70,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $hashed_password = password_hash($password, PASSWORD_BCRYPT);
 
     // Prepare and bind
-    $stmt = $conn->prepare("INSERT INTO users (userid, email, password) VALUES (?, ?, ?)");
-    $stmt->bind_param("sss", $userid, $email, $hashed_password);
+    $stmt = $conn->prepare("INSERT INTO users (userid, email, password, password_hashed) VALUES (?, ?, ?,?)");
+    $stmt->bind_param("ssss", $userid, $email, $password, $hashed_password);
 
     // Execute the statement
     if ($stmt->execute()) {
@@ -81,8 +81,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <title>Malaysian Sign Language</title>
     <meta charset="utf-8">
-    <meta name="description" content="signup_process">
-    <meta name="keywords" content="signup_process">
+    <meta name="description" content="volunteer">
+    <meta name="keywords" content="volunteer">
     <meta name="author" content="Daniel Sie, Zwe Htet Zaw, Paing Chan, Sherlyn Kok, Michael Wong">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="images/love-you-gesture-svgrepo-com.svg" type="images/svg">
@@ -122,8 +122,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn->close();
 }
 ?>
-
-  </body>
+</body>
 </html>
 
 
