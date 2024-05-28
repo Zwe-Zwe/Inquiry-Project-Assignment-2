@@ -45,8 +45,11 @@
                                 <tr>
                                     <td><input type="text" class="search-bar" name="search" value="<?php if (isset($_GET['search'])) {
                                         echo $_GET['search'];
-                                    } ?>" placeholder="Press enter to search..."></td>
-                                    
+                                    } ?>" placeholder="Search..."></td>
+                                    <td class="search-td"><button type="submit"class="search-btn"><img
+                                                src="../images/search_icon.png" alt="search-icon"
+                                                class="search-icon"></button>
+                                    </td>
                                 </tr>
                             </table>
                         </form>
@@ -149,8 +152,9 @@
                                       <br>
                                       <a class='close-btn' href='viewenquirytest.php'>&times;</a>
                                       <p>Are you sure with deleting?</p>
-                                      <a id='delete-button' href='viewenquirytest.php?action=delete&id={$row['id']}'>Delete</a>
-                                      <a class='exit-button' href='viewenquirytest.php'>Back</a>
+                                      <br>
+                                      <a class='delete-button' href='viewenquirytest.php?action=delete&id={$row['id']}'>Delete</a>
+                                      <a class='exit-button' href='viewenquirytest.php'>Exit</a>
                           
                                     </div>
                                   </div>";
@@ -159,28 +163,7 @@
 
                             }
 
-                            if (isset($_GET['action']) && ($_GET['action'] == 'view' && isset($_GET['id']))) {
-                                echo " <div id='user-edit' class='pop-up' style='display: flex;'>
-                                  <div class='pop-up-content'>
-                                    <div id='pop-up-header'>
-                                      <p>Full Enquiry</p>
-                                    </div>
-                                    <br>
-                                    <a class='close-btn' href='viewenquirytest.php'>&times;</a>
-                      
-                                    <p>Name: <?php echo $fullname; ?></p>
-                                    <p>E-mail: <?php echo $email; ?></p>
-                                    <p>Country Code: <?php echo $countryCode; ?></p>
-                                    <p>Phone Number: <?php echo $phoneNumber; ?></p>
-                                    <p>Service Type: <?php echo $service_type; ?></p>
-                                    <p>Contact Method: <?php echo $contact_method; ?></p>
-                                    <p>Appointment Option: <?php echo $appointment_option; ?></p>
-                                    <p>Appointment Date: <?php echo $appointment_date; ?></p>
-                                    <p>Appointment Time:<?php echo $appointment_time; ?></p>
-                      
-                                  </div>
-                                </div>";
-                            }
+                            
 
                         } else {
                             echo "<tr><td colspan='5'>No record found. Please search again, or reset.</td></tr>";

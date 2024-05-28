@@ -40,14 +40,15 @@
                     <div id="top_ui">
                         <h1>View Volunteers</h1>
 
-                        <form>
+                        <form method="GET">
                             <table>
                                 <tr>
                                     <td><input type="text" class="search-bar" name="search" value="<?php if (isset($_GET['search'])) {
                                         echo $_GET['search'];
                                     } ?>" placeholder="Search..."></td>
-                                    <td class="search-td"><a><img src="../images/search_icon.png" alt="search-icon"
-                                                class="search-icon"></a>
+                                    <td class="search-td"><button type="submit" class="search-btn"><img
+                                                src="../images/search_icon.png" alt="search-icon"
+                                                class="search-icon"></button>
                                     </td>
                                 </tr>
                             </table>
@@ -64,12 +65,12 @@
                     <table>
                         <tr>
                             <th class="volunteer_table_header">Full Name</th>
-                            
+
                             <th class="volunteer_table_header">Phone #</th>
-                            
+
                             <th class="volunteer_table_header">Organization</th>
                             <th class="volunteer_table_header">Full Time / Part Time</th>
-                            
+
                             <th class="volunteer_table_header">Options</th>
                         </tr>
 
@@ -89,7 +90,7 @@
                             $sql = "SELECT * FROM volunteer_information";
                         } else {
                             $filtervalues = $_GET['search'];
-                            $sql = "SELECT * FROM volunteer_information WHERE CONCAT(first_name,last_name,email,phone_num,street_address,city_or_town,state,postcode,organization,organization_type,days,time,message) LIKE '%$filtervalues%'";
+                            $sql = "SELECT * FROM volunteer_information WHERE CONCAT(first_name,last_name,phone_num,organization,organization_type) LIKE '%$filtervalues%'";
                         }
 
                         $result = $conn->query($sql);
@@ -159,8 +160,9 @@
                                       <br>
                                       <a class='close-btn' href='viewvolunteers.php'>&times;</a>
                                       <p>Are you sure with deleting?</p>
-                                      <a id='delete-button-v' href='viewvolunteers.php?action=delete&id={$row['id']}'>Delete</a>
-                                      <a class='exit-btn' href='viewvolunteers.php'>Exit</a>
+                                      <br>
+                                      <a class='delete-button' href='viewvolunteers.php?action=delete&id={$row['id']}'>Delete</a>
+                                      <a class='exit-button' href='viewvolunteers.php'>Exit</a>
                           
                                     </div>
                                   </div>";
@@ -169,31 +171,7 @@
 
                             }
 
-                            if (isset($_GET['action']) && ($_GET['action'] == 'view' && isset($_GET['id']))) {
-                                echo " <div id='user-edit' class='pop-up' style='display: flex;'>
-                                  <div class='pop-up-content'>
-                                    <div id='pop-up-header'>
-                                      <p>View Volunteer</p>
-                                    </div>
-                                    <br>
-                                    <a class='close-btn' href='viewvolunteers.php'>&times;</a>
-                      
-                                    <p>Name: $fullname </p>
-                                    <p>E-mail: <?php echo $email; ?></p>
-                                    <p>Phone Number: <?php echo $phone_num; ?></p>
-                                    <p>Street Address: <?php echo $street_address; ?></p>
-                                    <p>Postcode: <?php echo $postcode; ?></p>
-                                    <p>City/Town: <?php echo $city_or_town; ?></p>
-                                    <p>State: <?php echo $state; ?></p>
-                                    <p>Organization:<?php echo $organization; ?></p>
-                                    <p>Organization Type:<?php echo $organization_type; ?></p>
-                                    <p>Working Days:<?php echo $days; ?></p>
-                                    <p>Working Time:<?php echo $time; ?></p>
-                                    <p>Message:<?php echo $message; ?></p>
-                      
-                                  </div>
-                                </div>";
-                            }
+
 
                         } else {
                             echo "<tr><td colspan='9'>No record found. Please search again, or reset.</td></tr>";
@@ -231,18 +209,18 @@
                                         </div>
                                         <br>
                                         <a class='close-btn' href='viewvolunteers.php'>&times;</a>
-                                        <p>Name: <?php echo $fullname; ?></p>
-                                        <p>E-mail: <?php echo $email; ?></p>
-                                        <p>Phone Number: <?php echo $phone_num; ?></p>
-                                        <p>Street Address: <?php echo $street_address; ?></p>
-                                        <p>Postcode: <?php echo $postcode; ?></p>
-                                        <p>City/Town: <?php echo $city_or_town; ?></p>
-                                        <p>State: <?php echo $state; ?></p>
-                                        <p>Organization:<?php echo $organization; ?></p>
-                                        <p>Organization Type:<?php echo $organization_type; ?></p>
-                                        <p>Working Days:<?php echo $days; ?></p>
-                                        <p>Working Time:<?php echo $time; ?></p>
-                                        <p>Message:<?php echo $message; ?></p>
+                                        <p>Name: $fullname </p>
+                                        <p>E-mail: $email</p>
+                                        <p>Phone Number: $phone_num</p>
+                                        <p>Street Address: $street_address</p>
+                                        <p>Postcode: $postcode</p>
+                                        <p>City/Town: $city_or_town</p>
+                                        <p>State: $state</p>
+                                        <p>Organization: $organization</p>
+                                        <p>Organization Type: $organization_type</p>
+                                        <p>Working Days: $days</p>
+                                        <p>Working Time: $time</p>
+                                        <p>Message: $message</p>
                                     </div>
                                 </div>";
                         }
