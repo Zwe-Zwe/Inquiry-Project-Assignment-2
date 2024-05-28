@@ -1815,7 +1815,7 @@ html {
 }
 .volunteer-container {
   border: 2px solid var(--clr-accent);
-  margin: 8% 0;
+  margin: 6% 0;
   padding: 25px 30px;
   max-width: 700px;
   background: var(--clr-primary);
