@@ -1838,7 +1838,7 @@ html {
   margin: 3px 0;
   border-radius: 5px;
   background-color: #fff;
-} 
+}
 /* remove the default border of fieldset */
 .address-field {
   border: none;
@@ -2441,10 +2441,11 @@ footer .container .row {
 }
 .user_error {
   background: #f2dede;
+  border-radius: 5px;
   color: #a94442;
-  padding-left: 8px;
-  width: 90%;
-  margin-bottom: 1.1em;
+  padding: 8px;
+  width: 100%;
+  margin-bottom: 0.5em;
 }
 .account {
   font-size: 12px;
@@ -2507,9 +2508,9 @@ footer .container .row {
     height: 30%;
   }
 
-  #top_ui .search-btn{
-    width:10%;
-    height:20%;
+  #top_ui .search-btn {
+    width: 10%;
+    height: 20%;
     border: none;
     background-color: #504ce4;
   }
@@ -2535,18 +2536,18 @@ footer .container .row {
     font-weight: bold;
   }
 
-#view-button{
-  text-decoration: none;
-  background-color: #DFBC39;
-  color: white;
-  border-radius: 10px;
-  padding: 5px 20px 5px 20px;
-}
+  #view-button {
+    text-decoration: none;
+    background-color: #dfbc39;
+    color: white;
+    border-radius: 10px;
+    padding: 5px 20px 5px 20px;
+  }
 }
 
 /*Start of View Volunteers CSS */
 
-#volunteer_options{
+#volunteer_options {
   line-height: 40px;
 }
 
@@ -2558,9 +2559,9 @@ footer .container .row {
   border-radius: 10px;
   padding: 5px 15px 5px 15px;
 }
-.exit-button{
+.exit-button {
   text-decoration: none;
-  background-color: #DFBC39;
+  background-color: #dfbc39;
   color: white;
   border-radius: 10px;
   padding: 5px 20px 5px 20px;

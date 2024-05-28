@@ -7,7 +7,7 @@ $id = $userid = $email = $password = $error ="";
 // Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['cancel'])) {
-        header("Location: users.php");
+        header("Location: index.php");
         exit();
     }
 
