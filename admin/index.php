@@ -7,40 +7,50 @@ $id = $userid = $email = $password = $error ="";
 // Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['cancel'])) {
-        header("Location: index.php");
+        header("Location: users.php");
         exit();
-    } else if (isset($_POST['submit']) && $_POST['submit'] == 'Update') {
-        $id = $_POST["id"];
-        $userid = $_POST["userid"];
-        $email = $_POST["email"];
-        $password = $_POST["password"];
+    }
 
-        $sql = "UPDATE users SET userid=?, email=?, password=? WHERE id=?";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("sssi",$userid, $email, $password, $id);
-        $stmt->execute();
+    $userid = trim($_POST["userid"]);
+    $email = trim($_POST["email"]);
+    $password = trim($_POST["password"]);
 
-        if ($stmt->affected_rows > 0) {
-            header("Location: index.php");
-            exit();
-        } else {
-            $error = "Error updating user. No changes were made or the user does not exist.";
-        }
-        $stmt->close();
-    } else if (isset($_POST['submit']) && $_POST['submit'] == 'Create') {
-        $userid = $_POST["userid"];
-        $email = $_POST["email"];
-        $password = $_POST["password"];
+    // Validate inputs
+    if (empty($userid)) {
+        $error = "User ID is required";
+    } elseif (empty($email)) {
+        $error = "Email is required";
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $error = "Invalid email format";
+    } elseif (empty($password)) {
+        $error = "Password is required";
+    } elseif (strlen($password) < 6) {
+        $error = "Password must be at least 6 characters long";
+    }
+
+    if (empty($error)) {
         $password_hashed = password_hash($password, PASSWORD_BCRYPT);
-
-        $sql = "INSERT INTO users (userid, email, password,password_hashed) VALUES (?, ?, ?, ?)";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("ssss", $userid, $email, $password,$password_hashed);
-        if ($stmt->execute()) {
-            header("Location: index.php");
-            exit();
-        } else {
-            $error = "Error creating user.";
+        if (isset($_POST['submit']) && $_POST['submit'] == 'Create') {
+            $sql = "INSERT INTO users (userid, email, password, password_hashed) VALUES (?, ?, ?, ?)";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("ssss", $userid, $email, $password, $password_hashed);
+            if ($stmt->execute()) {
+                header("Location: users.php?success=New user created");
+                exit();
+            } else {
+                $error = "Error creating user.";
+            }
+        } elseif (isset($_POST['submit']) && $_POST['submit'] == 'Update') {
+            $id = $_POST["id"];
+            $sql = "UPDATE users SET userid=?, email=?, password=?, password_hashed=? WHERE id=?";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("ssssi", $userid, $email, $password, $password_hashed, $id);
+            if ($stmt->execute()) {
+                header("Location: users.php?success=User updated");
+                exit();
+            } else {
+                $error = "No changes were made or the user does not exist.";
+            }
         }
         $stmt->close();
     }
@@ -210,6 +220,11 @@ $result = $conn->query($sql);
                             <?php if ($_GET['action'] == 'edit'): ?>
                                 <input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>">
                             <?php endif; ?>
+                            <?php
+                                if (!empty($error)) {
+                                    echo "<p class='user_error'>". $error ."</p>";
+                                }
+                            ?>
                             <label for="userid"> USER ID: </label>
                             <input type="text" name="userid" id="userid" value="<?php echo htmlspecialchars($userid); ?>"> <br>
                             <label for="email1"> EMAIL: </label>
