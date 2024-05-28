@@ -2528,5 +2528,19 @@ footer .container .row {
   padding: 5px 20px 5px 20px;
 }
 
+.exit-button{
+  text-decoration: none;
+  background-color: #DFBC39;
+  color: white;
+  border-radius: 10px;
+  padding: 5px 20px 5px 20px;
+}
 
+
+}
+
+/*Start of View Volunteers CSS */
+
+#volunteer_options{
+  line-height: 40px;
 }
