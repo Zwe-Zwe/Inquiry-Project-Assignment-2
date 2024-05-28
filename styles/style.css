@@ -2496,8 +2496,15 @@ footer .container .row {
   }
 
   #top_ui .search-icon {
-    width: 100%;
-    height: 100%;
+    width: 30%;
+    height: 30%;
+  }
+
+  #top_ui .search-btn{
+    width:10%;
+    height:20%;
+    border: none;
+    background-color: #504ce4;
   }
 
   #top_ui .search-td {
@@ -2528,20 +2535,26 @@ footer .container .row {
   border-radius: 10px;
   padding: 5px 20px 5px 20px;
 }
-
-.exit-button{
-  text-decoration: none;
-  background-color: #DFBC39;
-  color: white;
-  border-radius: 10px;
-  padding: 5px 20px 5px 20px;
-}
-
-
 }
 
 /*Start of View Volunteers CSS */
 
 #volunteer_options{
   line-height: 40px;
+}
+
+.delete-button {
+  text-decoration: none;
+  background-color: red;
+  color: white;
+
+  border-radius: 10px;
+  padding: 5px 15px 5px 15px;
+}
+.exit-button{
+  text-decoration: none;
+  background-color: #DFBC39;
+  color: white;
+  border-radius: 10px;
+  padding: 5px 20px 5px 20px;
 }
