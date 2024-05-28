@@ -28,7 +28,7 @@
                             <li><a href="index.php">User Management</a></li>
                             <li><a href="index.php?action=add">Add New User</a></li>
                             <li><a href="#viewenquirytest.php">Enquiry Forms</a></li>
-                            <li class="active"><a href="#">Volunteer Forms</a></li>
+                            <li class="active"><a href="#viewvolunteers.php">Volunteer Forms</a></li>
                             <li><a href="../index.php">Logout</a></li>
                         </ul>
                     </nav>
@@ -39,16 +39,14 @@
                     <!-- search and sort goes here -->
                     <div id="top_ui">
                         <h1>View Enquiries</h1>
-
+                        
                         <form>
                             <table>
                                 <tr>
                                     <td><input type="text" class="search-bar" name="search" value="<?php if (isset($_GET['search'])) {
                                         echo $_GET['search'];
-                                    } ?>" placeholder="Search..."></td>
-                                    <td class="search-td"><a><img src="../images/search_icon.png" alt="search-icon"
-                                                class="search-icon"></a>
-                                    </td>
+                                    } ?>" placeholder="Press enter to search..."></td>
+                                    
                                 </tr>
                             </table>
                         </form>
