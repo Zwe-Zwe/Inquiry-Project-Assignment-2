@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt = $conn->prepare($sql);
             $stmt->bind_param("ssss", $userid, $email, $password, $password_hashed);
             if ($stmt->execute()) {
-                header("Location: users.php?success=New user created");
+                header("Location: index.php?success=New user created");
                 exit();
             } else {
                 $error = "Error creating user.";
@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt = $conn->prepare($sql);
             $stmt->bind_param("ssssi", $userid, $email, $password, $password_hashed, $id);
             if ($stmt->execute()) {
-                header("Location: users.php?success=User updated");
+                header("Location: index.php?success=User updated");
                 exit();
             } else {
                 $error = "No changes were made or the user does not exist.";
