@@ -1832,6 +1832,13 @@ html {
   justify-content: space-between;
   margin: 20px 0 12px 0;
 }
+#state {
+  width: 100%;
+  padding: 10px;
+  margin: 3px 0;
+  border-radius: 5px;
+  background-color: #fff;
+} 
 /* remove the default border of fieldset */
 .address-field {
   border: none;
