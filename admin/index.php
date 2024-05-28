@@ -160,7 +160,7 @@ $result = $conn->query($sql);
                                
                                 
                                     <a id='edit-button' href='index.php?action=edit&id={$row['id']}'>Edit</a>
-                                    <a id='delete-button' href='index.php?action=delete&id={$row['id']}'>Delete</a>";
+                                    <a id='delete-button' href='index.php?action=delete_confirmation&id={$row['id']}'>Delete</a>";
                                 }
                                 echo"
                                 </td>
