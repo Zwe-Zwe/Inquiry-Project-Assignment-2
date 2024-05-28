@@ -233,18 +233,18 @@
                                         </div>
                                         <br>
                                         <a class='close-btn' href='viewvolunteers.php'>&times;</a>
-                                        <p>Name: <?php echo $fullname; ?></p>
-                                        <p>E-mail: <?php echo $email; ?></p>
-                                        <p>Phone Number: <?php echo $phone_num; ?></p>
-                                        <p>Street Address: <?php echo $street_address; ?></p>
-                                        <p>Postcode: <?php echo $postcode; ?></p>
-                                        <p>City/Town: <?php echo $city_or_town; ?></p>
-                                        <p>State: <?php echo $state; ?></p>
-                                        <p>Organization:<?php echo $organization; ?></p>
-                                        <p>Organization Type:<?php echo $organization_type; ?></p>
-                                        <p>Working Days:<?php echo $days; ?></p>
-                                        <p>Working Time:<?php echo $time; ?></p>
-                                        <p>Message:<?php echo $message; ?></p>
+                                        <p>Name: $fullname; </p>
+                                        <p>E-mail: $email; </p>
+                                        <p>Phone Number: $phone_num; </p>
+                                        <p>Street Address: $street_address; </p>
+                                        <p>Postcode: $postcode; </p>
+                                        <p>City/Town: $city_or_town; </p>
+                                        <p>State: $state; </p>
+                                        <p>Organization:$organization; </p>
+                                        <p>Organization Type:$organization_type; </p>
+                                        <p>Working Days:$days; </p>
+                                        <p>Working Time:$time; </p>
+                                        <p>Message:$message; </p>
                                     </div>
                                 </div>";
                         }
