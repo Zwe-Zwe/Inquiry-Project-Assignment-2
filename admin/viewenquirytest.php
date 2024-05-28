@@ -28,7 +28,7 @@
                             <li><a href="index.php">User Management</a></li>
                             <li><a href="index.php?action=add">Add New User</a></li>
                             <li><a href="#viewenquirytest.php">Enquiry Forms</a></li>
-                            <li class="active"><a href="#viewvolunteers.php">Volunteer Forms</a></li>
+                            <li class="active"><a href="viewvolunteers.php">Volunteer Forms</a></li>
                             <li><a href="../index.php">Logout</a></li>
                         </ul>
                     </nav>

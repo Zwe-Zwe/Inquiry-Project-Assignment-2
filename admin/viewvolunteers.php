@@ -64,13 +64,12 @@
                     <table>
                         <tr>
                             <th class="volunteer_table_header">Full Name</th>
-                            <th class="volunteer_table_header">Email</th>
+                            
                             <th class="volunteer_table_header">Phone #</th>
-                            <th class="volunteer_table_header">Address</th>
+                            
                             <th class="volunteer_table_header">Organization</th>
                             <th class="volunteer_table_header">Full Time / Part Time</th>
-                            <th class="volunteer_table_header">Working Days & Time</th>
-                            <th class="volunteer_table_header">Reason</th>
+                            
                             <th class="volunteer_table_header">Options</th>
                         </tr>
 
@@ -103,13 +102,12 @@
                             while ($row = $result->fetch_assoc()) {
                                 echo "<tr>
                                     <td>{$row['first_name']} {$row['last_name']}</td>
-                                    <td>{$row['email']}</td>
+                                    
                                     <td>{$row['phone_num']}</td>
-                                    <td>{$row['street_address']} {$row['postcode']} {$row['city_or_town']} {$row['state']}</td>
+                                    
                                     <td>{$row['organization']}</td>
                                     <td>{$row['organization_type']}</td>
-                                    <td>{$row['days']} {$row['time']}</td>
-                                    <td>{$row['message']}</td>
+                                    
                                     <td id='volunteer_options'>
                                         <a id='view-button' href='viewvolunteers.php?action=view&id={$row['id']}'>View</a>
                                         <a id='delete-button' href='viewvolunteers.php?action=delete_confirmation&id={$row['id']}'>Delete</a>
@@ -175,12 +173,12 @@
                                 echo " <div id='user-edit' class='pop-up' style='display: flex;'>
                                   <div class='pop-up-content'>
                                     <div id='pop-up-header'>
-                                      <p>Full Volunteers</p>
+                                      <p>View Volunteer</p>
                                     </div>
                                     <br>
                                     <a class='close-btn' href='viewvolunteers.php'>&times;</a>
                       
-                                    <p>Name: <?php echo $fullname; ?></p>
+                                    <p>Name: $fullname </p>
                                     <p>E-mail: <?php echo $email; ?></p>
                                     <p>Phone Number: <?php echo $phone_num; ?></p>
                                     <p>Street Address: <?php echo $street_address; ?></p>
