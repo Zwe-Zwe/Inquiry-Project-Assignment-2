@@ -168,7 +168,7 @@ $result = $conn->query($sql);
                                 </td>
                             </tr>
                             ";
-                            
+
                             if (isset($_GET['action']) && ($_GET['action'] == 'delete_confirmation' && isset($_GET['id']))) {
 
 
@@ -181,8 +181,8 @@ $result = $conn->query($sql);
                                   <br>
                                   <a class='close-btn' href='viewenquirytest.php'>&times;</a>
                                   <p>Are you sure with deleting?</p>
-                                  <a id='delete-button' href='viewenquirytest.php?action=delete&id={$row['id']}'>Delete</a>
-                                  <a class='exit-button' href='viewenquirytest.php'>Back</a>
+                                  <a id='delete-button' href='index.php?action=delete&id={$row['id']}'>Delete</a>
+                                  <a class='exit-button' href='index.php'>Back</a>
                             
                                 </div>
                               </div>";
