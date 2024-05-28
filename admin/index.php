@@ -74,6 +74,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['action'])) {
     }
 }
 
+
+
 // Default sorting order
 $sortOrder = "ASC"; // Default ascending order
 
@@ -166,8 +168,29 @@ $result = $conn->query($sql);
                                 </td>
                             </tr>
                             ";
-                        
+
+                            if (isset($_GET['action']) && ($_GET['action'] == 'delete_confirmation' && isset($_GET['id']))) {
+
+
+                                echo "<div id='user-edit' class='pop-up' style='display: flex;'>
+                                <div class='pop-up-content'>  
+                                  <div id='pop-up-header'>
+                                    <p>Delete Confirmation</p>
+                                  </div>
+                                  
+                                  <br>
+                                  <a class='close-btn' href='viewenquirytest.php'>&times;</a>
+                                  <p>Are you sure with deleting?</p>
+                                  <a id='delete-button' href='index.php?action=delete&id={$row['id']}'>Delete</a>
+                                  <a class='exit-button' href='index.php'>Back</a>
+                            
+                                </div>
+                              </div>";
+                            }
+                            
                     }
+
+
                     
 
                         ?>
