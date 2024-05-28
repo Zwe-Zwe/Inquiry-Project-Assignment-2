@@ -74,24 +74,6 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['action'])) {
     }
 }
 
-if (isset($_GET['action']) && ($_GET['action'] == 'delete_confirmation' && isset($_GET['id']))) {
-
-
-    echo "<div id='user-edit' class='pop-up' style='display: flex;'>
-    <div class='pop-up-content'>  
-      <div id='pop-up-header'>
-        <p>Delete Confirmation</p>
-      </div>
-      
-      <br>
-      <a class='close-btn' href='viewenquirytest.php'>&times;</a>
-      <p>Are you sure with deleting?</p>
-      <a id='delete-button' href='viewenquirytest.php?action=delete&id={$row['id']}'>Delete</a>
-      <a class='exit-button' href='viewenquirytest.php'>Back</a>
-
-    </div>
-  </div>";
-}
 
 
 // Default sorting order
@@ -186,8 +168,29 @@ $result = $conn->query($sql);
                                 </td>
                             </tr>
                             ";
-                        
+                            
+                            if (isset($_GET['action']) && ($_GET['action'] == 'delete_confirmation' && isset($_GET['id']))) {
+
+
+                                echo "<div id='user-edit' class='pop-up' style='display: flex;'>
+                                <div class='pop-up-content'>  
+                                  <div id='pop-up-header'>
+                                    <p>Delete Confirmation</p>
+                                  </div>
+                                  
+                                  <br>
+                                  <a class='close-btn' href='viewenquirytest.php'>&times;</a>
+                                  <p>Are you sure with deleting?</p>
+                                  <a id='delete-button' href='viewenquirytest.php?action=delete&id={$row['id']}'>Delete</a>
+                                  <a class='exit-button' href='viewenquirytest.php'>Back</a>
+                            
+                                </div>
+                              </div>";
+                            }
+                            
                     }
+
+
                     
 
                         ?>
