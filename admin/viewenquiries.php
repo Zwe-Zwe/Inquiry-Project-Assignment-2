@@ -118,26 +118,7 @@
                                         $stmt->execute();
                                         header("Location: viewenquiries.php");
                                         exit();
-                                    } else if ($_GET['action'] == 'view' && isset($_GET['id'])) {
-                                        // Handle view form display
-                                        $id = $_GET['id'];
-                                        $sql = "SELECT * FROM enquiry_information WHERE id=?";
-                                        $stmt = $conn->prepare($sql);
-                                        $stmt->bind_param("i", $id);
-                                        $stmt->execute();
-                                        $result = $stmt->get_result();
-                                        $row = $result->fetch_assoc();
-                                        $fullname = $row['first_name'] . " " . $row['last_name'];
-                                        $email = $row['email'];
-                                        $countryCode = $row['countryCode'];
-                                        $phoneNumber = $row['phoneNumber'];
-                                        $service_type = $row['service_type'];
-                                        $contact_method = $row['contact_method'];
-                                        $appointment_option = $row['appointment_option'];
-                                        $appointment_date = $row['appointment_date'];
-                                        $appointment_time = $row['appointment_time'];
-                                        $show_info = 1;
-                                    }
+                                    } 
                                 }
 
                                 if (isset($_GET['action']) && ($_GET['action'] == 'delete_confirmation' && isset($_GET['id']))) {

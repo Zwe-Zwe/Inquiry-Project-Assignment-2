@@ -123,29 +123,7 @@
                                         $stmt->bind_param("i", $id);
                                         $stmt->execute();
                                         exit();
-                                    } else if ($_GET['action'] == 'view' && isset($_GET['id'])) {
-                                        // Handle view form display
-                                        $id = $_GET['id'];
-                                        $sql = "SELECT * FROM volunteer_information WHERE id=?";
-                                        $stmt = $conn->prepare($sql);
-                                        $stmt->bind_param("i", $id);
-                                        $stmt->execute();
-                                        $result = $stmt->get_result();
-                                        $row = $result->fetch_assoc();
-                                        $fullname = $row['first_name'] . " " . $row['last_name'];
-                                        $email = $row['email'];
-                                        $phone_num = $row['phone_num'];
-                                        $street_address = $row['street_address'];
-                                        $postcode = $row['postcode'];
-                                        $city_or_town = $row['city_or_town'];
-                                        $state = $row['state'];
-                                        $organization = $row['organization'];
-                                        $organization_type = $row['organization_type'];
-                                        $days = $row['days'];
-                                        $time = $row['time'];
-                                        $message = $row['message'];
-                                        $show_info = 1;
-                                    }
+                                    } 
                                 }
 
                                 if (isset($_GET['action']) && ($_GET['action'] == 'delete_confirmation' && isset($_GET['id']))) {
