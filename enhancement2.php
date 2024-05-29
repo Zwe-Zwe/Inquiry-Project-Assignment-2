@@ -137,9 +137,9 @@
             />
           </figure>
 
-          <p class="enhc_name">Login</p>
+          <p class="enhc_name">Login/Logout</p>
           <p class="enhc_desc">
-            Allow users to login after registering
+            Allow users to login and logout after registering. It reads through the database and find the user id entered. Then, it will decrypt the password and check whether the user entered the correct password. If it was correct, it will let the user login. When the user is logged in, it will change the login button and make it so when clicked, it will show the option to logout.
             <br />
             <br />
             Pages applied: login.php
@@ -194,6 +194,32 @@
             <br />
             Source:
             https://youtu.be/yp5pYIg4WHc?feature=shared
+          </p>
+        </div>
+
+        <br />
+
+      </section>
+      <section>
+        <div class="sect">
+          <figure>
+            <img
+              src="images/user-sorting.gif"
+              alt="User Sorting GIF"
+              title="User Sorting GIF"
+              class="enh1"
+            />
+          </figure>
+
+          <p class="enhc_name">Sorting Users</p>
+          <p class="enhc_desc">
+            Allows the admin to sort the users by username either ascending or descending order
+            <br />
+            <br />
+            Pages applied: Admin Panel
+            <br />
+            Source:
+            https://www.mysqltutorial.org/mysql-basics/mysql-order-by/#:~:text=Use%20the%20ORDER%20BY%20clause,the%20FROM%20and%20SELECT%20clauses.
           </p>
         </div>
 
