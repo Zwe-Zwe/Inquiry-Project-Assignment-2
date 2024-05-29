@@ -137,9 +137,9 @@
             />
           </figure>
 
-          <p class="enhc_name">Login</p>
+          <p class="enhc_name">Login/Logout</p>
           <p class="enhc_desc">
-            Allow users to login after registering
+            Allow users to login and logout after registering. It reads through the database and find the user id entered. Then, it will decrypt the password and check whether the user entered the correct password. If it was correct, it will let the user login. When the user is logged in, it will change the login button and make it so when clicked, it will show the option to logout.
             <br />
             <br />
             Pages applied: login.php
