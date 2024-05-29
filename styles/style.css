@@ -2431,6 +2431,9 @@ footer .container .row {
       width: 100%;
     }
   }
+  #admin-nav a:hover {
+    background-color: #f4f4f4;
+  }
 }
 
 /* Start of CSS for Login & Signup*/

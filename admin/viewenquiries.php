@@ -23,7 +23,7 @@
             <label for="menu-toggle" class="menu-toggle-label">☰</label>
                 <aside class="sidebar">
                     <div class="logo"><img src="../images/logo2.png"></div>
-                    <nav>
+                    <nav  id="admin-nav">
                         <ul>
                             <li><a href="index.php">User Management</a></li>
                             <li><a href="index.php?action=add">Add New User</a></li>
