@@ -2423,10 +2423,13 @@ footer .container .row {
   #menu-toggle:checked ~ .sidebar {
     transform: translateX(0);
   }
-  main {
-    margin-left: 0;
-    padding: 20px;
-    width: 100%;
+  #management,
+  #viewenquiry {
+    main {
+      margin-left: 0;
+      padding: 20px;
+      width: 100%;
+    }
   }
 }
 
