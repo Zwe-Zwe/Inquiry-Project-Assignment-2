@@ -152,6 +152,32 @@
         <br />
 
       </section>
+      <section>
+        <div class="sect">
+          <figure>
+            <img
+              src="images/user-sorting.gif"
+              alt="User Sorting GIF"
+              title="User Sorting GIF"
+              class="enh1"
+            />
+          </figure>
+
+          <p class="enhc_name">Sorting Users</p>
+          <p class="enhc_desc">
+            Allows the admin to sort the users by username either ascending or descending order
+            <br />
+            <br />
+            Pages applied: Admin Panel
+            <br />
+            Source:
+            https://www.mysqltutorial.org/mysql-basics/mysql-order-by/#:~:text=Use%20the%20ORDER%20BY%20clause,the%20FROM%20and%20SELECT%20clauses.
+          </p>
+        </div>
+
+        <br />
+
+      </section>
     </article>
   </body>
 </html>
