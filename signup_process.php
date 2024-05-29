@@ -67,11 +67,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Hash the password before storing it
-    $password = password_hash($password, PASSWORD_BCRYPT);
+    $hashed_password = password_hash($password, PASSWORD_BCRYPT);
 
     // Prepare and bind
     $stmt = $conn->prepare("INSERT INTO users (userid, email, password) VALUES (?, ?, ?)");
-    $stmt->bind_param("sss", $userid, $email, $password);
+    $stmt->bind_param("sss", $userid, $email, $hashed_password);
 
     // Execute the statement
     if ($stmt->execute()) {
