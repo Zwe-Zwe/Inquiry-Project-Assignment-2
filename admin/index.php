@@ -117,7 +117,7 @@ $result = $conn->query($sql);
                 <ul>
                     <li><a href="#">User Management</a></li>
                     <li><a href="index.php?action=add">Add New User</a></li>
-                    <li><a href="viewenquirytest.php">Enquiry Forms</a></li> 
+                    <li><a href="viewenquiries.php">Enquiry Forms</a></li> 
                     <li><a href="viewvolunteers.php">Volunteer Forms</a></li>
                     <li><a href="../index.php">Logout</a></li> 
                 </ul>
@@ -180,7 +180,7 @@ $result = $conn->query($sql);
                                   </div>
                                   
                                   <br>
-                                  <a class='close-btn' href='viewenquirytest.php'>&times;</a>
+                                  <a class='close-btn' href='viewenquiries.php'>&times;</a>
                                   <p>Are you sure with deleting?</p>
                                   <br>
                                   <a class='delete-button' href='index.php?action=delete&id={$row['id']}'>Delete</a>
