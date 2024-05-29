@@ -130,6 +130,32 @@
         <div class="sect">
           <figure>
             <img
+              src="images/login.gif"
+              alt="login"
+              title="login"
+              class="enh1"
+            />
+          </figure>
+
+          <p class="enhc_name">Login</p>
+          <p class="enhc_desc">
+            Allow users to login after registering
+            <br />
+            <br />
+            Pages applied: login.php
+            <br />
+            Source:
+            -
+          </p>
+        </div>
+
+        <br />
+
+      </section>
+      <section>
+        <div class="sect">
+          <figure>
+            <img
               src="images/user-management-module.gif"
               alt="User Management Module GIF"
               title="User Management Module GIF"
