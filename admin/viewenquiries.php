@@ -27,7 +27,7 @@
                         <ul>
                             <li><a href="index.php">User Management</a></li>
                             <li><a href="index.php?action=add">Add New User</a></li>
-                            <li><a href="#viewenquirytest.php">Enquiry Forms</a></li>
+                            <li><a href="#viewenquiries.php">Enquiry Forms</a></li>
                             <li class="active"><a href="viewvolunteers.php">Volunteer Forms</a></li>
                             <li><a href="../index.php">Logout</a></li>
                         </ul>
@@ -103,9 +103,9 @@
                                     <td>{$row['service_type']}</td>
                                     <td>{$row['contact_method']}</td>
                                     <td>{$row['appointment_option']}</td>
-                                    <td>
-                                        <a id='view-button' href='viewenquirytest.php?action=view&id={$row['id']}'>View</a>
-                                        <a id='delete-button' href='viewenquirytest.php?action=delete_confirmation&id={$row['id']}'>Delete</a>
+                                    <td id='enquiry_options'>
+                                        <a id='view-button' href='viewenquiries.php?action=view&id={$row['id']}'>View</a>
+                                        <a id='delete-button' href='viewenquiries.php?action=delete_confirmation&id={$row['id']}'>Delete</a>
                                     </td>
                                 </tr>";
 
@@ -116,7 +116,7 @@
                                         $stmt = $conn->prepare($sql);
                                         $stmt->bind_param("i", $id);
                                         $stmt->execute();
-                                        header("Location: viewenquirytest.php");
+                                        header("Location: viewenquiries.php");
                                         exit();
                                     } 
                                 }
@@ -131,11 +131,11 @@
                                       </div>
                                       
                                       <br>
-                                      <a class='close-btn' href='viewenquirytest.php'>&times;</a>
+                                      <a class='close-btn' href='viewenquiries.php'>&times;</a>
                                       <p>Are you sure with deleting?</p>
                                       <br>
-                                      <a class='delete-button' href='viewenquirytest.php?action=delete&id={$row['id']}'>Delete</a>
-                                      <a class='exit-button' href='viewenquirytest.php'>Exit</a>
+                                      <a class='delete-button' href='viewenquiries.php?action=delete&id={$row['id']}'>Delete</a>
+                                      <a class='exit-button' href='viewenquiries.php'>Exit</a>
                           
                                     </div>
                                   </div>";
@@ -178,7 +178,7 @@
                                             <p>Full Enquiry</p>
                                         </div>
                                         <br>
-                                        <a class='close-btn' href='viewenquirytest.php'>&times;</a>
+                                        <a class='close-btn' href='viewenquiries.php'>&times;</a>
                                         <p>Name: $fullname</p>
                                         <p>E-mail: $email</p>
                                         <p>Country Code: $countryCode</p>

@@ -130,6 +130,32 @@
         <div class="sect">
           <figure>
             <img
+              src="images/login.gif"
+              alt="login"
+              title="login"
+              class="enh1"
+            />
+          </figure>
+
+          <p class="enhc_name">Login</p>
+          <p class="enhc_desc">
+            Allow users to login after registering
+            <br />
+            <br />
+            Pages applied: login.php
+            <br />
+            Source:
+            -
+          </p>
+        </div>
+
+        <br />
+
+      </section>
+      <section>
+        <div class="sect">
+          <figure>
+            <img
               src="images/user-management-module.gif"
               alt="User Management Module GIF"
               title="User Management Module GIF"
@@ -139,13 +165,35 @@
 
           <p class="enhc_name">User Management Module</p>
           <p class="enhc_desc">
-            Allows the admin to create, view, edit and delete users
+            Allows the admin to create, view, edit and delete users.
             <br />
             <br />
             Pages applied: Admin Panel
             <br />
             Source:
             https://www.youtube.com/watch?v=72U5Af8KUpA&ab_channel=StepbyStep
+          </p>
+        </div>
+
+        <div class="sect">
+          <figure>
+            <img
+              src="images/view-page-search-bar.gif"
+              alt="View Pages Search Bar GIF"
+              title="View Pages Search Bar GIF"
+              class="enh1"
+            />
+          </figure>
+
+          <p class="enhc_name">User Management Module</p>
+          <p class="enhc_desc">
+            Allows the admin to search for specific information easily.
+            <br />
+            <br />
+            Pages applied: viewenquiries.php, viewvolunteers.php
+            <br />
+            Source:
+            https://youtu.be/yp5pYIg4WHc?feature=shared
           </p>
         </div>
 
