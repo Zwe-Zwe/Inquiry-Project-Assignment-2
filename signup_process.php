@@ -67,11 +67,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Hash the password before storing it
-    $hashed_password = password_hash($password, PASSWORD_BCRYPT);
+    $password = password_hash($password, PASSWORD_BCRYPT);
 
     // Prepare and bind
     $stmt = $conn->prepare("INSERT INTO users (userid, email, password) VALUES (?, ?, ?)");
-    $stmt->bind_param("sss", $userid, $email, $hashed_password);
+    $stmt->bind_param("sss", $userid, $email, $password);
 
     // Execute the statement
     if ($stmt->execute()) {
@@ -104,7 +104,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div id="user_info">
             <p>User ID: <?php echo $userid; ?></p>
             <p>Email: <?php echo $email; ?></p>
-            <p>Password: <?php echo $password; ?></p> <!-- Displaying plain password -->
+            <p>Password: <?php echo $password; ?></p>
         </div>
     </div>
 </section>

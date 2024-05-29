@@ -74,8 +74,7 @@ $sql_user = "CREATE TABLE IF NOT EXISTS users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     userid VARCHAR(255) NOT NULL UNIQUE,
     email VARCHAR(255) NOT NULL UNIQUE,
-    password VARCHAR(255) NOT NULL,
-    password_hashed VARCHAR(255) NOT NULL
+    password VARCHAR(255) NOT NULL
 )";
 if (!mysqli_query($conn, $sql_user)) {
     echo "Error creating table: " . mysqli_error($conn);
