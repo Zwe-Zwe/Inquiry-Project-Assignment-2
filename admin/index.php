@@ -113,21 +113,17 @@ $result = $conn->query($sql);
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="../styles/style.css" />
-    <style>
-    
-
-    </style>
 </head>
 <body>
     <section id="management">
     <div class="container">
-    <input type="checkbox" id="menu-toggle" class="menu-toggle">
-    <label for="menu-toggle" class="menu-toggle-label">☰</label>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-toggle-label">☰</label>
         <aside class="sidebar">
             <div class="logo"><img src="../images/logo2.png"></div>
             <nav id="admin-nav">
                 <ul>
-                    <li><a href="#">User Management</a></li>
+                    <li class="active"><a href="#">User Management</a></li>
                     <li><a href="index.php?action=add">Add New User</a></li>
                     <li><a href="viewenquiries.php">Enquiry Forms</a></li> 
                     <li><a href="viewvolunteers.php">Volunteer Forms</a></li>
@@ -135,11 +131,10 @@ $result = $conn->query($sql);
                 </ul>
             </nav>
         </aside>
-        </div>
         <main>
             <section class="user-management">
+                <h1>User management</h1>
                 <div id="table_top">
-                    <h1>User management</h1>
                     <a class="sort_logout" href="?sort=''">Default</a>  <a class="sort_logout" href="?sort=asc">Sort Ascending</a>  <a class="sort_logout" href="?sort=desc">Sort Descending</a>
                     <a class="sort_logout" href="../index.php">Logout</a>
                 </div>    
@@ -211,7 +206,7 @@ $result = $conn->query($sql);
     
                 </table>
                 <?php if (isset($_GET['action']) && ($_GET['action'] == 'add' || ($_GET['action'] == 'edit' && isset($_GET['id'])))): ?>
-                <div id="user-edit" class="pop-up" style="display: flex;">
+                <div id="user-edit" class="pop-up">
                     <div class="pop-up-content">
                         <a class="close-btn" href="index.php">&times;</a>
                         <form method="post">
@@ -238,7 +233,7 @@ $result = $conn->query($sql);
                 <?php endif; ?>
             </section>
         </main>
-    
+    </div>
     </section>
 </body>
 </html>

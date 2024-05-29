@@ -2163,40 +2163,33 @@ footer .container .row {
 
 #management,
 #viewenquiry {
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    position: relative;
-  }
-
   .container {
     display: flex;
-    width: 100%;
   }
-
   .sidebar {
-    width: 250px;
+    width: 210px;
     height: 100vh;
     background-color: #f4f4f4;
     padding: 20px;
     position: fixed;
     box-sizing: border-box;
   }
-
   .sidebar .logo img {
     width: 50%;
     margin-top: 20px;
     margin-bottom: 50px;
     margin-left: 25%;
   }
-
   .sidebar nav ul {
     list-style: none;
     padding: 0;
+    li:hover {
+      transition: all 0.3s ease;
+      a {
+        font-weight: bold;
+      }
+    }
   }
-
   .sidebar nav ul li {
     margin-bottom: 30px;
   }
@@ -2204,51 +2197,34 @@ footer .container .row {
   .sidebar nav ul li a {
     text-decoration: none;
     color: #333;
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 16px;
   }
 
   .sidebar nav ul li.active a {
     font-weight: bold;
   }
 
-  main {
-    margin-left: 250px;
-    padding: 10px;
-    box-sizing: border-box;
-    width: 80%;
-  }
-
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
   .search-container {
     display: flex;
     align-items: center;
   }
-
   .search-container input {
     padding: 5px;
     margin-right: 10px;
   }
-
   .search-container button {
     padding: 5px 10px;
     margin-right: 10px;
   }
-
   .user-icon img {
     width: 40px;
     height: 40px;
     border-radius: 50%;
   }
-
   #table_top {
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
   }
@@ -2257,9 +2233,10 @@ footer .container .row {
     background-color: #f4f4f4;
     width: auto;
     a:hover {
-      background-color: none ;
+      background-color: none;
     }
   }
+
   .sort_logout {
     padding: 10px 20px;
     font-size: 16px;
@@ -2270,6 +2247,7 @@ footer .container .row {
     transition: 0.3s all ease;
     border: 1px solid black;
     text-decoration: none;
+    margin-bottom: 10px;
   }
 
   .sort_logout:hover {
@@ -2288,14 +2266,12 @@ footer .container .row {
     width: 100%;
     border-collapse: collapse;
   }
-
   table th,
   table td {
     border: 1px solid #ddd;
     padding: 10px;
-    text-align: left;
+    text-align: center;
   }
-
   table th {
     background-color: #f4f4f4;
   }
@@ -2307,8 +2283,8 @@ footer .container .row {
   table .status.inactive {
     color: red;
   }
-
   #user-edit {
+    display: flex;
     position: fixed;
     top: 0;
     left: 0;
@@ -2319,9 +2295,7 @@ footer .container .row {
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    display: none; /* Hidden by default */
   }
-
   #user-edit h1 {
     text-align: center;
   }
@@ -2423,20 +2397,32 @@ footer .container .row {
   display: none;
 }
 
+#management,
+#viewenquiry {
+  main {
+    margin-left: 210px;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    h1 {
+      text-align: center;
+      font-size: 26px;
+      margin-bottom: 5px;
+    }
+  }
+}
+
 @media (max-width: 767px) {
   .menu-toggle-label {
     display: block;
   }
-
   .sidebar {
     transition: transform 0.3s ease;
     transform: translateX(-100%); /* Hide the sidebar initially */
   }
-
   #menu-toggle:checked ~ .sidebar {
     transform: translateX(0);
   }
-
   main {
     margin-left: 0;
     padding: 20px;

@@ -34,8 +34,6 @@
                     </nav>
                 </aside>
                 <main>
-                    <header></header>
-
                     <!-- search and sort goes here -->
                     <div id="top_ui">
                         <h1>View Volunteers</h1>
@@ -129,7 +127,7 @@
                                 if (isset($_GET['action']) && ($_GET['action'] == 'delete_confirmation' && isset($_GET['id']))) {
 
 
-                                    echo "<div id='user-edit' class='pop-up' style='display: flex;'>
+                                    echo "<div id='user-edit' class='pop-up'>
                                     <div class='pop-up-content'>  
                                       <div id='pop-up-header'>
                                         <p>Delete Confirmation</p>
@@ -180,7 +178,7 @@
                             $days = $row['days'];
                             $time = $row['time'];
                             $message = $row['message'];
-                            echo "<div id='user-edit' class='pop-up' style='display: flex;'>
+                            echo "<div id='user-edit' class='pop-up'>
                                     <div class='pop-up-content'>
                                         <div id='pop-up-header'>
                                             <p>Full Volunteers</p>
