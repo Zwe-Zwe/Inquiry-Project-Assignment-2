@@ -121,9 +121,11 @@ $result = $conn->query($sql);
 <body>
     <section id="management">
     <div class="container">
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <label for="menu-toggle" class="menu-toggle-label">☰</label>
         <aside class="sidebar">
             <div class="logo"><img src="../images/logo2.png"></div>
-            <nav>
+            <nav id="admin-nav">
                 <ul>
                     <li><a href="#">User Management</a></li>
                     <li><a href="index.php?action=add">Add New User</a></li>
@@ -133,11 +135,8 @@ $result = $conn->query($sql);
                 </ul>
             </nav>
         </aside>
+        </div>
         <main>
-            <header>
-               
-                
-            </header>
             <section class="user-management">
                 <div id="table_top">
                     <h1>User management</h1>
@@ -239,7 +238,7 @@ $result = $conn->query($sql);
                 <?php endif; ?>
             </section>
         </main>
-    </div>
+    
     </section>
 </body>
 </html>

@@ -16,11 +16,11 @@
 </head>
 
 <body>
-
-    <main>
         <section id="viewenquiry">
             <!-- Picture and credentials section -->
             <div class="container">
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="menu-toggle-label">☰</label>
                 <aside class="sidebar">
                     <div class="logo"><img src="../images/logo2.png"></div>
                     <nav>
@@ -197,7 +197,6 @@
             </div>
         </section>
         <br><br>
-    </main>
 
 </body>
 

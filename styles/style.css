@@ -2181,6 +2181,8 @@ footer .container .row {
     height: 100vh;
     background-color: #f4f4f4;
     padding: 20px;
+    position: fixed;
+    box-sizing: border-box;
   }
 
   .sidebar .logo img {
@@ -2211,9 +2213,10 @@ footer .container .row {
   }
 
   main {
-    flex: 1;
-    padding: 20px;
-    width: 100%;
+    margin-left: 250px;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 80%;
   }
 
   header {
@@ -2249,7 +2252,14 @@ footer .container .row {
     justify-content: space-between;
     align-items: center;
   }
-
+  #admin-nav {
+    max-height: none;
+    background-color: #f4f4f4;
+    width: auto;
+    a:hover {
+      background-color: none ;
+    }
+  }
   .sort_logout {
     padding: 10px 20px;
     font-size: 16px;
@@ -2392,6 +2402,45 @@ footer .container .row {
   }
   #delete-button {
     background-color: red;
+  }
+}
+
+.menu-toggle-label {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px 20px;
+  border: none;
+  background: #333;
+  color: #fff;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000; /* Ensure the label is above other elements */
+}
+
+.menu-toggle {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .menu-toggle-label {
+    display: block;
+  }
+
+  .sidebar {
+    transition: transform 0.3s ease;
+    transform: translateX(-100%); /* Hide the sidebar initially */
+  }
+
+  #menu-toggle:checked ~ .sidebar {
+    transform: translateX(0);
+  }
+
+  main {
+    margin-left: 0;
+    padding: 20px;
+    width: 100%;
   }
 }
 
