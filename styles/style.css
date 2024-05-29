@@ -2377,22 +2377,21 @@ footer .container .row {
     color: white;
   }
 
-  #edit-button {
-    text-decoration: none;
-    background-color: #4caf50;
-    color: white;
-
-    border-radius: 10px;
-    padding: 5px 30px 5px 30px;
-  }
-
+  #edit-button,
   #delete-button {
     text-decoration: none;
-    background-color: red;
     color: white;
-
+    display: block;
     border-radius: 10px;
-    padding: 5px 15px 5px 15px;
+    padding: 5px 20px 5px 20px;
+    margin: 5px;
+    text-align: center;
+  }
+  #edit-button {
+    background-color: #4caf50;
+  }
+  #delete-button {
+    background-color: red;
   }
 }
 
@@ -2553,7 +2552,8 @@ footer .container .row {
 
 /*Start of View Volunteers CSS */
 
-#volunteer_options , #enquiry_options{
+#volunteer_options,
+#enquiry_options {
   line-height: 40px;
 }
 

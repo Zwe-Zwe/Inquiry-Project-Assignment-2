@@ -31,9 +31,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($error)) {
         $password_hashed = password_hash($password, PASSWORD_BCRYPT);
         if (isset($_POST['submit']) && $_POST['submit'] == 'Create') {
-            $sql = "INSERT INTO users (userid, email, password, password_hashed) VALUES (?, ?, ?, ?)";
+            $sql = "INSERT INTO users (userid, email, password) VALUES (?, ?, ?)";
             $stmt = $conn->prepare($sql);
-            $stmt->bind_param("ssss", $userid, $email, $password, $password_hashed);
+            $stmt->bind_param("sss", $userid, $email, $password_hashed);
             if ($stmt->execute()) {
                 header("Location: index.php?success=New user created");
                 exit();
@@ -42,9 +42,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
         } elseif (isset($_POST['submit']) && $_POST['submit'] == 'Update') {
             $id = $_POST["id"];
-            $sql = "UPDATE users SET userid=?, email=?, password=?, password_hashed=? WHERE id=?";
+            $sql = "UPDATE users SET userid=?, email=?, password=? WHERE id=?";
             $stmt = $conn->prepare($sql);
-            $stmt->bind_param("ssssi", $userid, $email, $password, $password_hashed, $id);
+            $stmt->bind_param("sssi", $userid, $email, $password_hashed, $id);
             if ($stmt->execute()) {
                 header("Location: index.php?success=User updated");
                 exit();
@@ -170,8 +170,6 @@ $result = $conn->query($sql);
 
                                 if ($row['userid'] != 'admin') {
                                 echo "
-                               
-                                
                                     <a id='edit-button' href='index.php?action=edit&id={$row['id']}'>Edit</a>
                                     <a id='delete-button' href='index.php?action=delete_confirmation&id={$row['id']}'>Delete</a>";
                                 }
