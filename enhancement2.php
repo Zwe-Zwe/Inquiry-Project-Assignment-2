@@ -131,8 +131,8 @@
           <figure>
             <img
               src="images/login.gif"
-              alt="login"
-              title="login"
+              alt="Login GIF"
+              title="Login GIF"
               class="enh1"
             />
           </figure>
