@@ -187,7 +187,8 @@
 
           <p class="enhc_name">Search Bar</p>
           <p class="enhc_desc">
-            Allows the admin to search for specific information easily.
+            Allows the admin to search for specific information easily. This feature utilizes advanced PHP and MySQL functions, which is not included in the syllabus.
+            The developer must take note of important fields in the table being displayed and write their code accordingly to ensure functionality.
             <br />
             <br />
             Pages applied: viewenquiries.php, viewvolunteers.php
