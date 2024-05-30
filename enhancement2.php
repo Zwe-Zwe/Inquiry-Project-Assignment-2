@@ -169,7 +169,7 @@
           Implementation involves modifying the database, adding authentication logic, managing sessions, and creating user management interfaces with CRUD functionalities.
           This provides a secure and flexible system for managing users and public enquiries, ensuring only authorized personnel can access sensitive data.            <br />
             <br />
-            Pages applied: Admin Panel
+            Pages applied: admin/index.php
             <br />
             Source:
             https://www.youtube.com/watch?v=72U5Af8KUpA&ab_channel=StepbyStep
@@ -188,7 +188,7 @@
 
           <p class="enhc_name">Search Bar</p>
           <p class="enhc_desc">
-            Allows the admin to search for specific information easily.
+            Allows the admin to search for specific information easily. Include a search input field and button in the HTML interface. Use the CONCAT function in the SQL query to search across multiple columns (e.g., first name, last name, service type, contact method, and appointment option). This enhancement ensures a robust, secure, and user-friendly search functionality that allows users to easily find relevant information across all columns in the enquiry table.
             <br />
             <br />
             Pages applied: viewenquiries.php, viewvolunteers.php
@@ -219,7 +219,7 @@
           Handle sorting parameters in the PHP code to dynamically sort the user data as per the selected criteria.
           This enhancement allows administrators to easily manage and view users in a sorted and organized manner, providing a better user management experience.            <br />
             <br />
-            Pages applied: Admin Panel
+            Pages applied: admin/index.php
             <br />
             Source:
             https://www.mysqltutorial.org/mysql-basics/mysql-order-by/#:~:text=Use%20the%20ORDER%20BY%20clause,the%20FROM%20and%20SELECT%20clauses.
