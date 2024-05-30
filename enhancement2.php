@@ -165,8 +165,9 @@
 
           <p class="enhc_name">User Management Module</p>
           <p class="enhc_desc">
-            Allows the admin to create, view, edit and delete users.
-            <br />
+          The enhancement goes beyond the basic requirements by adding security, access control, and comprehensive user management.
+          Implementation involves modifying the database, adding authentication logic, managing sessions, and creating user management interfaces with CRUD functionalities.
+          This provides a secure and flexible system for managing users and public enquiries, ensuring only authorized personnel can access sensitive data.            <br />
             <br />
             Pages applied: Admin Panel
             <br />
@@ -213,8 +214,10 @@
 
           <p class="enhc_name">Sorting Users</p>
           <p class="enhc_desc">
-            Allows the admin to sort the users by username either ascending or descending order
-            <br />
+          Add sorting controls in the HTML to allow the user to select sorting criteria and order.
+          Update the SQL query to include the sorting parameters, ensuring they are validated to prevent SQL injection.
+          Handle sorting parameters in the PHP code to dynamically sort the user data as per the selected criteria.
+          This enhancement allows administrators to easily manage and view users in a sorted and organized manner, providing a better user management experience.            <br />
             <br />
             Pages applied: Admin Panel
             <br />
