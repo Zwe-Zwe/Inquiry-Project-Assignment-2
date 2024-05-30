@@ -7,7 +7,7 @@ $id = $userid = $email = $password = $error ="";
 // Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['cancel'])) {
-        header("Location: index.php");
+        header("Location: user_management.php");
         exit();
     }
 
@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt = $conn->prepare($sql);
             $stmt->bind_param("sss", $userid, $email, $password_hashed);
             if ($stmt->execute()) {
-                header("Location: index.php?success=New user created");
+                header("Location: user_management.php?success=New user created");
                 exit();
             } else {
                 $error = "Error creating user.";
@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt = $conn->prepare($sql);
             $stmt->bind_param("sssi", $userid, $email, $password_hashed, $id);
             if ($stmt->execute()) {
-                header("Location: index.php?success=User updated");
+                header("Location: user_management.php?success=User updated");
                 exit();
             } else {
                 $error = "No changes were made or the user does not exist.";
@@ -65,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['action'])) {
         $stmt->execute();
         $stmt->close();
 
-        header('Location: index.php');
+        header('Location: user_management.php');
         exit();
     } else if ($_GET['action'] == 'edit' && isset($_GET['id'])) {
         $id = $_GET['id'];
@@ -119,18 +119,7 @@ $result = $conn->query($sql);
     <div class="container">
         <input type="checkbox" id="menu-toggle" class="menu-toggle">
         <label for="menu-toggle" class="menu-toggle-label">☰</label>
-        <aside class="sidebar">
-            <div class="logo"><img src="../images/logo2.png"></div>
-            <nav id="admin-nav">
-                <ul>
-                    <li class="active"><a href="#">User Management</a></li>
-                    <li><a href="index.php?action=add">Add New User</a></li>
-                    <li><a href="viewenquiries.php">Enquiry Forms</a></li> 
-                    <li><a href="viewvolunteers.php">Volunteer Forms</a></li>
-                    <li><a href="../index.php">Logout</a></li> 
-                </ul>
-            </nav>
-        </aside>
+        <?php include "sidebar.php" ?>
         <main>
             <section class="user-management">
                 <h1>User management</h1>
@@ -164,8 +153,8 @@ $result = $conn->query($sql);
 
                                 if ($row['userid'] != 'admin') {
                                 echo "
-                                    <a id='edit-button' href='index.php?action=edit&id={$row['id']}'>Edit</a>
-                                    <a id='delete-button' href='index.php?action=delete_confirmation&id={$row['id']}'>Delete</a>";
+                                    <a id='edit-button' href='user_management.php?action=edit&id={$row['id']}'>Edit</a>
+                                    <a id='delete-button' href='user_management.php?action=delete_confirmation&id={$row['id']}'>Delete</a>";
                                 }
                                 echo"
                                 </td>
@@ -185,8 +174,8 @@ $result = $conn->query($sql);
                                   <a class='close-btn' href='viewenquiries.php'>&times;</a>
                                   <p>Are you sure with deleting?</p>
                                   <br>
-                                  <a class='delete-button' href='index.php?action=delete&id={$row['id']}'>Delete</a>
-                                  <a class='exit-button' href='index.php'>Back</a>
+                                  <a class='delete-button' href='user_mangement.php?action=delete&id={$row['id']}'>Delete</a>
+                                  <a class='exit-button' href='user_mangement.php'>Back</a>
                             
                                 </div>
                               </div>";
@@ -208,7 +197,7 @@ $result = $conn->query($sql);
                 <?php if (isset($_GET['action']) && ($_GET['action'] == 'add' || ($_GET['action'] == 'edit' && isset($_GET['id'])))): ?>
                 <div id="user-edit" class="pop-up">
                     <div class="pop-up-content">
-                        <a class="close-btn" href="index.php">&times;</a>
+                        <a class="close-btn" href="user_management.php">&times;</a>
                         <form method="post">
                             <h1><?php echo $_GET['action'] == 'edit' ? 'Update User' : 'Create New User'; ?></h1>
                             <?php if ($_GET['action'] == 'edit'): ?>

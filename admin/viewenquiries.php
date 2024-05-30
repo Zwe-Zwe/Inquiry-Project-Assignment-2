@@ -15,24 +15,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
+<!--lol-->
 <body>
         <section id="viewenquiry">
             <!-- Picture and credentials section -->
             <div class="container">
             <input type="checkbox" id="menu-toggle" class="menu-toggle">
             <label for="menu-toggle" class="menu-toggle-label">☰</label>
-                <aside class="sidebar">
-                    <div class="logo"><img src="../images/logo2.png"></div>
-                    <nav  id="admin-nav">
-                        <ul>
-                            <li><a href="index.php">User Management</a></li>
-                            <li><a href="index.php?action=add">Add New User</a></li>
-                            <li class="active"><a href="#viewenquiries.php">Enquiry Forms</a></li>
-                            <li><a href="viewvolunteers.php">Volunteer Forms</a></li>
-                            <li><a href="../index.php">Logout</a></li>
-                        </ul>
-                    </nav>
-                </aside>
+            <?php include "sidebar.php" ?>
                 <main>
                     <!-- search and sort goes here -->
                     <div id="top_ui">
