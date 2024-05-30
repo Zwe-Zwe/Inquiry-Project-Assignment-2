@@ -165,10 +165,11 @@
 
           <p class="enhc_name">User Management Module</p>
           <p class="enhc_desc">
-            Allows the admin to create, view, edit and delete users.
+          The enhancement goes beyond the basic requirements by adding security, access control, and comprehensive user management.
+          Implementation involves modifying the database, adding authentication logic, managing sessions, and creating user management interfaces with CRUD functionalities.
+          This provides a secure and flexible system for managing users and public enquiries, ensuring only authorized personnel can access sensitive data.            <br />
             <br />
-            <br />
-            Pages applied: Admin Panel
+            Pages applied: admin/index.php
             <br />
             Source:
             https://www.youtube.com/watch?v=72U5Af8KUpA&ab_channel=StepbyStep
@@ -181,13 +182,13 @@
               src="images/view-page-search-bar.gif"
               alt="View Pages Search Bar GIF"
               title="View Pages Search Bar GIF"
-              class="enh1"
+              id="enh2"
             />
           </figure>
 
-          <p class="enhc_name">User Management Module</p>
+          <p class="enhc_name">Search Bar</p>
           <p class="enhc_desc">
-            Allows the admin to search for specific information easily.
+            Allows the admin to search for specific information easily. Include a search input field and button in the HTML interface. Use the CONCAT function in the SQL query to search across multiple columns (e.g., first name, last name, service type, contact method, and appointment option). This enhancement ensures a robust, secure, and user-friendly search functionality that allows users to easily find relevant information across all columns in the enquiry table.
             <br />
             <br />
             Pages applied: viewenquiries.php, viewvolunteers.php
@@ -213,10 +214,12 @@
 
           <p class="enhc_name">Sorting Users</p>
           <p class="enhc_desc">
-            Allows the admin to sort the users by username either ascending or descending order
+          Add sorting controls in the HTML to allow the user to select sorting criteria and order.
+          Update the SQL query to include the sorting parameters, ensuring they are validated to prevent SQL injection.
+          Handle sorting parameters in the PHP code to dynamically sort the user data as per the selected criteria.
+          This enhancement allows administrators to easily manage and view users in a sorted and organized manner, providing a better user management experience.            <br />
             <br />
-            <br />
-            Pages applied: Admin Panel
+            Pages applied: admin/index.php
             <br />
             Source:
             https://www.mysqltutorial.org/mysql-basics/mysql-order-by/#:~:text=Use%20the%20ORDER%20BY%20clause,the%20FROM%20and%20SELECT%20clauses.
