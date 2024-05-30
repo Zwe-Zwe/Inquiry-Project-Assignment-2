@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($result->num_rows == 1) {
         $row = $result->fetch_assoc();
-        if (password_verify($password, $row['password_hashed'])) {
+        if (password_verify($password, $row['password'])) {
             // Password is correct, start a new session
             $_SESSION['login_user'] = $userid;
             if($userid == "admin"){

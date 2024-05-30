@@ -16,26 +16,24 @@
 </head>
 
 <body>
-
-    <main>
         <section id="viewenquiry">
             <!-- Picture and credentials section -->
             <div class="container">
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="menu-toggle-label">☰</label>
                 <aside class="sidebar">
                     <div class="logo"><img src="../images/logo2.png"></div>
-                    <nav>
+                    <nav  id="admin-nav">
                         <ul>
                             <li><a href="index.php">User Management</a></li>
                             <li><a href="index.php?action=add">Add New User</a></li>
-                            <li><a href="#viewenquiries.php">Enquiry Forms</a></li>
-                            <li class="active"><a href="viewvolunteers.php">Volunteer Forms</a></li>
+                            <li class="active"><a href="#viewenquiries.php">Enquiry Forms</a></li>
+                            <li><a href="viewvolunteers.php">Volunteer Forms</a></li>
                             <li><a href="../index.php">Logout</a></li>
                         </ul>
                     </nav>
                 </aside>
                 <main>
-                    <header></header>
-
                     <!-- search and sort goes here -->
                     <div id="top_ui">
                         <h1>View Enquiries</h1>
@@ -124,7 +122,7 @@
                                 if (isset($_GET['action']) && ($_GET['action'] == 'delete_confirmation' && isset($_GET['id']))) {
 
 
-                                    echo "<div id='user-edit' class='pop-up' style='display: flex;'>
+                                    echo "<div id='user-edit' class='pop-up'>
                                     <div class='pop-up-content'>  
                                       <div id='pop-up-header'>
                                         <p>Delete Confirmation</p>
@@ -172,7 +170,7 @@
                             $appointment_option = $row['appointment_option'];
                             $appointment_date = $row['appointment_date'];
                             $appointment_time = $row['appointment_time'];
-                            echo "<div id='user-edit' class='pop-up' style='display: flex;'>
+                            echo "<div id='user-edit' class='pop-up'>
                                     <div class='pop-up-content'>
                                         <div id='pop-up-header'>
                                             <p>Full Enquiry</p>
@@ -197,7 +195,6 @@
             </div>
         </section>
         <br><br>
-    </main>
 
 </body>
 

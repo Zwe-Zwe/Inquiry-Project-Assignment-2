@@ -31,9 +31,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($error)) {
         $password_hashed = password_hash($password, PASSWORD_BCRYPT);
         if (isset($_POST['submit']) && $_POST['submit'] == 'Create') {
-            $sql = "INSERT INTO users (userid, email, password, password_hashed) VALUES (?, ?, ?, ?)";
+            $sql = "INSERT INTO users (userid, email, password) VALUES (?, ?, ?)";
             $stmt = $conn->prepare($sql);
-            $stmt->bind_param("ssss", $userid, $email, $password, $password_hashed);
+            $stmt->bind_param("sss", $userid, $email, $password_hashed);
             if ($stmt->execute()) {
                 header("Location: index.php?success=New user created");
                 exit();
@@ -42,9 +42,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
         } elseif (isset($_POST['submit']) && $_POST['submit'] == 'Update') {
             $id = $_POST["id"];
-            $sql = "UPDATE users SET userid=?, email=?, password=?, password_hashed=? WHERE id=?";
+            $sql = "UPDATE users SET userid=?, email=?, password=? WHERE id=?";
             $stmt = $conn->prepare($sql);
-            $stmt->bind_param("ssssi", $userid, $email, $password, $password_hashed, $id);
+            $stmt->bind_param("sssi", $userid, $email, $password_hashed, $id);
             if ($stmt->execute()) {
                 header("Location: index.php?success=User updated");
                 exit();
@@ -113,19 +113,17 @@ $result = $conn->query($sql);
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="../styles/style.css" />
-    <style>
-    
-
-    </style>
 </head>
 <body>
     <section id="management">
     <div class="container">
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-toggle-label">☰</label>
         <aside class="sidebar">
             <div class="logo"><img src="../images/logo2.png"></div>
-            <nav>
+            <nav id="admin-nav">
                 <ul>
-                    <li><a href="#">User Management</a></li>
+                    <li class="active"><a href="#">User Management</a></li>
                     <li><a href="index.php?action=add">Add New User</a></li>
                     <li><a href="viewenquiries.php">Enquiry Forms</a></li> 
                     <li><a href="viewvolunteers.php">Volunteer Forms</a></li>
@@ -134,13 +132,9 @@ $result = $conn->query($sql);
             </nav>
         </aside>
         <main>
-            <header>
-               
-                
-            </header>
             <section class="user-management">
+                <h1>User management</h1>
                 <div id="table_top">
-                    <h1>User management</h1>
                     <a class="sort_logout" href="?sort=''">Default</a>  <a class="sort_logout" href="?sort=asc">Sort Ascending</a>  <a class="sort_logout" href="?sort=desc">Sort Descending</a>
                     <a class="sort_logout" href="../index.php">Logout</a>
                 </div>    
@@ -170,8 +164,6 @@ $result = $conn->query($sql);
 
                                 if ($row['userid'] != 'admin') {
                                 echo "
-                               
-                                
                                     <a id='edit-button' href='index.php?action=edit&id={$row['id']}'>Edit</a>
                                     <a id='delete-button' href='index.php?action=delete_confirmation&id={$row['id']}'>Delete</a>";
                                 }
@@ -214,7 +206,7 @@ $result = $conn->query($sql);
     
                 </table>
                 <?php if (isset($_GET['action']) && ($_GET['action'] == 'add' || ($_GET['action'] == 'edit' && isset($_GET['id'])))): ?>
-                <div id="user-edit" class="pop-up" style="display: flex;">
+                <div id="user-edit" class="pop-up">
                     <div class="pop-up-content">
                         <a class="close-btn" href="index.php">&times;</a>
                         <form method="post">
