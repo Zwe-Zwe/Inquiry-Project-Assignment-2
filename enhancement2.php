@@ -181,11 +181,11 @@
               src="images/view-page-search-bar.gif"
               alt="View Pages Search Bar GIF"
               title="View Pages Search Bar GIF"
-              class="enh1"
+              id="enh2"
             />
           </figure>
 
-          <p class="enhc_name">User Management Module</p>
+          <p class="enhc_name">Search Bar</p>
           <p class="enhc_desc">
             Allows the admin to search for specific information easily.
             <br />
