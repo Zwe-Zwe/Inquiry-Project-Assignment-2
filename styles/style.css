@@ -2365,10 +2365,8 @@ footer .container .row {
   #delete-button {
     text-decoration: none;
     color: white;
-    display: block;
     border-radius: 10px;
-    padding: 5px 20px 5px 20px;
-    margin: 5px;
+    padding: 5px 10px 5px 10px;
     text-align: center;
   }
   #edit-button {
@@ -2385,8 +2383,7 @@ footer .container .row {
   cursor: pointer;
   padding: 10px 20px;
   border: none;
-  background: #333;
-  color: #fff;
+  color: black;
   position: fixed;
   top: 10px;
   right: 10px;
@@ -2415,6 +2412,9 @@ footer .container .row {
 @media (max-width: 767px) {
   .menu-toggle-label {
     display: block;
+  }
+  #menu-toggle:checked + .menu-toggle-label {
+    background-color: #f4f4f4;
   }
   .sidebar {
     transition: transform 0.3s ease;
@@ -2587,7 +2587,7 @@ footer .container .row {
     background-color: #dfbc39;
     color: white;
     border-radius: 10px;
-    padding: 5px 20px 5px 20px;
+    padding: 5px 10px 5px 10px;
   }
 }
 
@@ -2614,8 +2614,6 @@ footer .container .row {
   padding: 5px 20px 5px 20px;
 }
 
-
-#enh2{
-  width:100%;
-  
+#enh2 {
+  width: 100%;
 }

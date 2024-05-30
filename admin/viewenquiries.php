@@ -22,7 +22,7 @@
             <div class="container">
             <input type="checkbox" id="menu-toggle" class="menu-toggle">
             <label for="menu-toggle" class="menu-toggle-label">☰</label>
-            <?php include "sidebar.php" ?>
+            <?php include "sidebar.php"; ?>
                 <main>
                     <!-- search and sort goes here -->
                     <div id="top_ui">

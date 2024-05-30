@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Password is correct, start a new session
             $_SESSION['login_user'] = $userid;
             if($userid == "admin"){
-                header("Location: admin/index.php");
+                header("Location: admin/user_management.php");
             } else {
                 header("Location: index.php"); // Redirect to welcome page
             }
