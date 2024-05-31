@@ -1635,16 +1635,16 @@ html {
   background-position: center;
 }
 .front-1 {
-  background-image: url(/styles/images/car_wash.jpg);
+  background-image: url("images/car_wash.jpg");
 }
 .front-2 {
-  background-image: url(/styles/images/sewing.jpg);
+  background-image: url("images/sewing.jpg");
 }
 .front-3 {
-  background-image: url(/styles/images/class.webp);
+  background-image: url("images/class.webp");
 }
 .front-4 {
-  background-image: url(/styles/images/haircut.webp);
+  background-image: url("images/haircut.webp");
 }
 .card-back {
   padding: 0 30px;
@@ -2617,3 +2617,89 @@ footer .container .row {
 #enh2 {
   width: 100%;
 }
+
+/* End of View Volunteers CSS */
+
+/* Start of Enhancement2 Page CSS */
+
+#enhancements_page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  section {
+    margin-bottom: 40px;
+  }
+
+  #top {
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  #title {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+
+  #desc {
+    font-size: 1.2em;
+    color: #555;
+  }
+
+  /* Enhancement section styles */
+  .sect {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+
+  .sect img.enh1 {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+
+  .sect:hover img.enh1 {
+    transform: scale(1.05);
+    filter: brightness(0.9);
+  }
+
+  .enhc_name {
+    font-size: 1.5em;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+
+  .enhc_desc {
+    font-size: 1em;
+    color: #666;
+    text-align: center;
+    max-width: 800px;
+  }
+
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .sect {
+      padding: 15px;
+    }
+
+    .enhc_name {
+      font-size: 1.2em;
+    }
+
+    .enhc_desc {
+      font-size: 0.9em;
+    }
+  }
+}
+
+/* End of Enhancement2 Page CSS */
