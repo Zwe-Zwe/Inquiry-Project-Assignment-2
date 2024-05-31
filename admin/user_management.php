@@ -164,7 +164,7 @@ $result = $conn->query($sql);
                             if (isset($_GET['action']) && ($_GET['action'] == 'delete_confirmation' && isset($_GET['id']))) {
 
 
-                                echo "<div id='user-edit' class='pop-up' style='display: flex;'>
+                                echo "<div id='user-edit' class='pop-up'>
                                 <div class='pop-up-content'>  
                                   <div id='pop-up-header'>
                                     <p>Delete Confirmation</p>
